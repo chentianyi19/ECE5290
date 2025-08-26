@@ -1,172 +1,137 @@
 ---
-layout: default
-title: Home
+layout: course
+title: ECE 5290/7290 & ORIE 5290
+permalink: /ECE5290/
 ---
-
-<!-- ========== BIO ========== -->
-<div class="docs-section" id="bio">
-  <h4>Bio</h4>
-
-  
-  <p>I am an Associate Professor with the <a href="https://www.engineering.cornell.edu/ece/">Department of Electrical and Computer Engineering</a> and <a href="https://tech.cornell.edu/">Cornell Tech</a> at Cornell University. I am currently on leave from the <a href="https://www.ecse.rpi.edu/">Department of Electrical, Computer, and Systems Engineering</a> at Rensselaer Polytechnic Institute (RPI), where I joined as an Assistant Professor in 2019 and was then promoted to Associate Professor with tenure in 2025. Prior to joining RPI, I received my doctoral degree from the University of Minnesota under the supervision of Prof. Georgios B. Giannakis.   
-  Prior to coming to the United States, I got my B.Sc. from Fudan University with the highest honors in 2014. </p> 
-  <p>Dr. Chen is the inaugural recipient of the <a href="https://cse.umn.edu/ece/feature-stories/alumnus-tianyi-chen-receives-ieee-sps-best-dissertation-award">IEEE Signal Processing Society Best PhD Dissertation Award</a> in 2020, a recipient of the <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2047177&HistoricalAwards=false">NSF CAREER Award</a> in 2021, and a recipient of the <a href="https://www.amazon.science/research-awards/program-updates/fall-2021-and-winter-2022-amazon-research-awards-recipients-announced">Amazon Research Award</a> in 2022. 
-    He is also a co-author of the Best Student Paper Award at the NeurIPS Federated Learning Workshop in 2020, the IEEE ICASSP Conference in 2021, and the <a href="https://signalprocessingsociety.org/community-involvement/award-recipients/">IEEE Signal Processing Society Young Author Best Paper Award</a> in 2024.</p>   
-</div>
-
-<!-- ========== PUBLICATIONS ========== -->
-<div class="docs-section" id="publications">
-  <h4>Publications</h4>
-
-  <p style="font-size: 20px;"><b>Most recent publications on <a href="{{ site.data.main_info.google_scholar }}" target="_blank">Google Scholar</a><span onclick="window.open('{{ site.data.main_info.google_scholar }}')" style="cursor: pointer">
-                <i class="ai ai-google-scholar ai-lg" style="font-size: 20px; padding-top: 10px" aria-hidden="true"></i></span>.</b>
+<!-- ========== COURSE OVERVIEW ========== -->
+<section id="overview" class="docs-section">
+  <h3>Course Overview</h3>
+  <p>
+    This course covers the theory and practice of distributed optimization for modern machine learning and AI systems.
+    Topics include consensus-based algorithms, federated learning, parallel and asynchronous methods, and optimization for large-scale foundation models.
   </p>
+  <p><strong>Prerequisites:</strong> Linear algebra, probability, and a basic understanding of machine learning.</p>
+</section>
 
+<!-- ========== SCHEDULE ========== -->
+<section id="schedule" class="docs-section">
+  <h3>Schedule (Tentative)</h3>
+  <table class="u-full-width">
+    <thead>
+      <tr><th>Date</th><th>Topic</th><th>Reading</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Week 1</td><td>Introduction to Distributed Optimization</td><td>[Slides]</td></tr>
+      <tr><td>Week 2</td><td>Convex Optimization Basics</td><td>Nocedal & Wright</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ========== ASSIGNMENTS ========== -->
+<section id="assignments" class="docs-section">
+  <h3>Assignments & Project</h3>
+  <ul>
+    <li><a href="#">HW1: Gradient Descent and Convergence</a> (due MM/DD)</li>
+    <li><a href="#">Project Guidelines</a></li>
+  </ul>
+</section>
+
+<!-- ========== SUGGESTED READINGS ========== -->
+<div class="docs-section" id="readings">
+  <h4>Suggested Readings</h4>
+  <p style="font-size: 18px;">These papers provide background and deeper insights into distributed optimization and federated learning. We will update the list throughout the semester.</p>
+
+  <!-- Tabs for categories -->
   <ul class="tab-nav">
-    <li><div class="button active" data-ref="#papers-selected">Highlighted</div></li>
-    <li><div class="button" data-ref="#papers-recent">Recent</div></li>
-    <li><div class="button" data-ref="#papers-all">All</div></li>
+    <li><div class="button active" data-ref="#readings-core">Core</div></li>
+    <li><div class="button" data-ref="#readings-advanced">Advanced</div></li>
+    <li><div class="button" data-ref="#readings-recent">Recent Research</div></li>
   </ul>
 
   <div class="tab-content">
-    <div class="tab-pane active" id="papers-selected">
-      {% assign selected_papers = site.data.publications.papers | where: "selected", "y" %}
-      {% for paper in selected_papers %}
-        <div class="paper">
-          <p class="title"><b>{{ paper.title }}</b></p>
-          <p>{{ paper.authors }}</p>
-          <p><i>{{ paper.venue }}</i></p>
-          <p>{{ paper.note }}</p>
-           <div class="paper-buttons">
-            {% if paper.paper_pdf %}
-              <a class="button" href="{{ paper.paper_pdf | prepend: site.baseurl }}" target="_blank">Paper</a>
-            {% endif %}
-
-            {% if paper.slides %}
-              <a class="button" href="{{ paper.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
-            {% endif %}
-
-            {% if paper.poster %}
-              <a class="button" href="{{ paper.poster | prepend: site.baseurl }}" target="_blank">Poster</a>
-            {% endif %}
-
-            {% if paper.video %}
-              <a class="button" href="{{ paper.video }}" target="_blank">Video</a>
-            {% endif %}
-
-            {% if paper.code %}
-              <a class="button" href="{{ paper.code }}" target="_blank">Code</a>
-            {% endif %}
-
-            {% if paper.talk %}
-              <a class="button" href="{{ paper.talk }}" target="_blank">Talk</a>
-            {% endif %}
-
-            {% if paper.data %}
-              <a class="button" href="{{ paper.data }}" target="_blank">Data</a>
-            {% endif %}
-
-          </div>
+    <!-- Core Readings -->
+    <div class="tab-pane active" id="readings-core">
+      <div class="paper">
+        <p class="title"><b>Distributed Optimization and Statistical Learning via the Alternating Direction Method of Multipliers</b></p>
+        <p>D. Bertsekas, J. Tsitsiklis</p>
+        <p><i>Foundations and Trends in Machine Learning</i></p>
+        <div class="paper-buttons">
+          <a class="button" href="https://arxiv.org/abs/1902.01046" target="_blank">Paper</a>
         </div>
-      {% endfor %}
+      </div>
+
+      <div class="paper">
+        <p class="title"><b>Federated Learning: Strategies for Improving Communication Efficiency</b></p>
+        <p>P. Kairouz et al.</p>
+        <p><i>arXiv preprint, 2021</i></p>
+        <div class="paper-buttons">
+          <a class="button" href="https://arxiv.org/abs/1902.01046" target="_blank">Paper</a>
+        </div>
+      </div>
     </div>
 
-   <div class="tab-pane" id="papers-recent">
-      {% assign recent_papers = site.data.publications.papers | where: "recent", "y" %}
-      {% for paper in recent_papers %}
-        <div class="paper">
-          <p class="title"><b>{{ paper.title }}</b></p>
-          <p>{{ paper.authors }}</p>
-          <p><i>{{ paper.venue }}</i></p>
-          <p>{{ paper.note }}</p>
-           <div class="paper-buttons">
-            {% if paper.paper_pdf %}
-              <a class="button" href="{{ paper.paper_pdf | prepend: site.baseurl }}" target="_blank">Paper</a>
-            {% endif %}
-
-            {% if paper.slides %}
-              <a class="button" href="{{ paper.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
-            {% endif %}
-
-            {% if paper.poster %}
-              <a class="button" href="{{ paper.poster | prepend: site.baseurl }}" target="_blank">Poster</a>
-            {% endif %}
-
-            {% if paper.video %}
-              <a class="button" href="{{ paper.video }}" target="_blank">Video</a>
-            {% endif %}
-
-            {% if paper.code %}
-              <a class="button" href="{{ paper.code }}" target="_blank">Code</a>
-            {% endif %}
-
-            {% if paper.talk %}
-              <a class="button" href="{{ paper.talk }}" target="_blank">Talk</a>
-            {% endif %}
-
-            {% if paper.data %}
-              <a class="button" href="{{ paper.data }}" target="_blank">Data</a>
-            {% endif %}
-
-          </div>
+    <!-- Advanced Readings -->
+    <div class="tab-pane" id="readings-advanced">
+      <div class="paper">
+        <p class="title"><b>Gradient Tracking for Decentralized Optimization</b></p>
+        <p>A. Nedic et al.</p>
+        <p><i>IEEE Transactions on Automatic Control</i></p>
+        <div class="paper-buttons">
+          <a class="button" href="https://arxiv.org/abs/2002.04691" target="_blank">Paper</a>
         </div>
-      {% endfor %}
+      </div>
+    </div>
+
+    <!-- Recent Research -->
+    <div class="tab-pane" id="readings-recent">
+      <div class="paper">
+        <p class="title"><b>Beyond FedAvg: New Algorithms for Federated Optimization</b></p>
+        <p>T. Li, A. S. Sahu, M. Zaheer et al.</p>
+        <p><i>Proceedings of MLSys</i></p>
+        <div class="paper-buttons">
+          <a class="button" href="https://proceedings.mlsys.org/paper/2020/hash/f19e..." target="_blank">Paper</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- ========== PEOPLE ========== -->
-<div class="docs-section" id="Instructors and TAs">  
-  <h4>People</h4>
-<!-- ========== Current ========== -->  
-<div class="tab-content">
-<div id="member-container">
-<style>
-    .box {
-        display: inline-block; /* Make divs inline */
-        width: 30%; /* Set the width */
-        padding: 10px;
-        border: 1px solid #ccc;
-        text-align: center;
-        vertical-align: top; /* Align them properly */
-        margin: 10px auto;
-    }
-</style>
-  
-<div class="tab-pane active" id="people-current">
-<div id="member" class="box" >
-<img src="assets/people/zhaoxianwu.jpg" style="width: 120px; height: 200px; object-fit: cover; border-radius: 10%;">
-<p>
-<b><a href="https://zhaoxian-wu.github.io/">Zhaoxian Wu</a></b> 
-<a href="https://scholar.google.com/citations?user=Hyk4lXJy4CEC&hl=en"><i class="ai ai-google-scholar ai-2x" style="font-size:20px; color:#14003a"></i></a> </br>        
-2023 Fall - present</br>
-M.S. Sun Yat-sen University</br>
-B.S. Sun Yat-sen University, Guangzhou, China 
-</p>
-</div>  
-</div>
+<!-- ========== INSTRUCTORS, TAs, GRADERS ========== -->
+<div class="docs-section" id="people">
+  <h4>Instructor, TAs, and Graders</h4>
+  <div id="member-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: flex-start;">
+    
+    <!-- Instructor -->
+    <div class="box">
+      <img src="/assets/people/tianyi.jpg" alt="Tianyi Chen" style="width: 120px; height: 200px; object-fit: cover; border-radius: 10%;">
+      <p>
+        <b><a href="https://chentianyi1991.github.io/">Tianyi Chen</a></b><br>
+        Instructor<br>
+        <a href="mailto:chentianyi19@gmail.com">Email</a><br>
+        <a href="https://scholar.google.com/citations?user=xxxx" target="_blank">
+          <i class="ai ai-google-scholar ai-2x" style="font-size:20px; color:#14003a"></i>
+        </a>
+      </p>
+    </div>
 
-</div>
-</div>
-</div>
+    <!-- TA Example -->
+    <div class="box">
+      <img src="/assets/people/ta1.jpg" alt="TA Name" style="width: 120px; height: 200px; object-fit: cover; border-radius: 10%;">
+      <p>
+        <b>TA Name</b><br>
+        Teaching Assistant<br>
+        <a href="mailto:ta_email@cornell.edu">Email</a>
+      </p>
+    </div>
 
- 
-
-<!-- ========== Acknowledgments ========== -->
-<div class="docs-section" id="sponsors">  
-  <h4>Acknowledgments</h4>
-  <p>
-Acknowledgment: National Science Foundation (CAREER-2047177, ECCS 2412486, SCALE-MODL 2134168/2401297), Amazon Research Award (AWS AI),
-IBM AI Horizons, Cisco Research, Nvidia, IEEE Signal Processing Society 
-  </p> 
-<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 15px;">
-    <img src="assets/fund1.jpg" style="width: 250px; max-width: 100%;">
-    <img src="assets/fund2.jpg" style="width: 250px; max-width: 100%;">
-    <img src="assets/fund3.jpg" style="width: 250px; max-width: 100%;">
-  </div> 
-      <div class="row">
-      This website is based on a template by <a href="https://faculty.washington.edu/msaveski/">Martin Saveski</a> and <a href="https://mmoorr.github.io/www_personal/">Mor Naaman</a>.
-      </div>  
+    <!-- Grader Example -->
+    <div class="box">
+      <img src="/assets/people/grader1.jpg" alt="Grader Name" style="width: 120px; height: 200px; object-fit: cover; border-radius: 10%;">
+      <p>
+        <b>Grader Name</b><br>
+        Grader<br>
+        <a href="mailto:grader_email@cornell.edu">Email</a>
+      </p>
+    </div>
+  </div>
 </div>
-
-
