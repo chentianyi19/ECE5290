@@ -68,12 +68,11 @@
     </ul>
   </section>
 
-  <section id="policies">
-    <h3>Course Policies</h3>
-    <p>
-      Academic integrity, late submission, and collaboration policies will follow Cornell Tech standards.
-    </p>
-  </section>
+
+  <!-- ADDED: render page-specific content (your Suggested Readings & People from index.html) -->
+  {{ content }}
+
+ 
 
   <section id="resources">
     <h3>Resources</h3>
@@ -83,8 +82,15 @@
     </ul>
   </section>
 
+    <section id="policies">
+    <h3>Course Policies</h3>
+    <p>
+      Academic integrity, late submission, and collaboration policies will follow Cornell Tech standards.
+    </p>
+  </section>
+
   <footer style="text-align:center; margin-top: 40px; font-size: 0.9em;">
-    &copy; 2025 Distributed Optimization for Machine Learning and AI | Cornell Tech
+    &copy; 2025 Distributed Optimization for ML and AI | Cornell Tech
   </footer>
 </div>
 </body>
