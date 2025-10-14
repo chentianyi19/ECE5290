@@ -1,22 +1,108 @@
 # One entry per module/week
+
 - week: 1
-  date: 2025-09-02
+  date: 2025-08-25
   title: "Introduction & Motivation"
   summary: "Course goals, distributed optimization landscape, examples."
   slides_url: "/assets/slides/lec01.pdf"
-
-- week: 2
-  date: 2025-09-09
-  title: "Convex Optimization Basics"
+  
+- week: 1
+  date: 2025-08-27
+  title: "ML fundamentals for optimization (ERM, supervised learning)"
   summary: "Convex sets/functions, optimality, gradient methods."
   slides_url: "/assets/slides/lec02.pdf"
  
-
-# Add more:
-# - week: 3
-#   date: 2025-09-16
-#   title: "Consensus & Decentralized GD"
-#   summary: "Consensus protocols, mixing matrices, rates."
-#   slides_url: "/assets/slides/lec03.pdf"
-#   readings:
-#     - { label: "Nedić & Ozdaglar (2009)", url: "https://..." }
+- week: 2
+  date: 2025-09-01
+  title: "No class - Labor day"
+- week: 2
+  date: 2025-09-03
+  title: "ML fundamentals for optimization (ERM, supervised learning)"
+- week: 3
+  date: 2025-09-08
+  title: "Optimization basics: gradient descent - quadratic problems"
+- week: 3
+  date: 2025-09-10
+  title: "Optimization basics: gradient descent - convergence and complexity"
+  note: HW 1 due (9/12)
+- week: 4
+  date: 2025-09-15
+  title: Gradient methods for constrained optimization
+- week: 4
+  date: 2025-09-17
+  title: "Stochastic optimization: SGD, minibatching, and convergence rates"
+- week: 5
+  date: 2025-09-22
+  title: "Variance reduction for finite-sum optimization (SVRG)"
+- week: 5
+  date: 2025-09-24
+  title: "Momentum methods: Polyak and their stochastic variants"
+- week: 6
+  date: 2025-09-29
+  title: Adaptive methods and recent developments
+  note: HW 2 due (9/26)
+- week: 6
+  date: 2025-10-01
+  title: Consensus and spectrum of graphs
+  note: Project announced
+- week: 7
+  date: 2025-10-06
+  title: Gossip and random walks
+- week: 7
+  date: 2025-10-08
+  title: "Centralized distributed optimization: model and data parallelism"
+- week: 8
+  date: 2025-10-13
+  title: "No class - Fall break"
+- week: 8
+  date: 2025-10-15
+  title: "Decentralized algorithms: consensus GD and its convergence"
+  note: Practice problem announced
+- week: 9
+  date: 2025-10-20
+  title: "Decentralized algorithms: gradient tracking and directed graphs"
+  note: HW 3 due (10/20)
+- week: 9
+  date: 2025-10-22
+  title: "Communication-efficient methods: quantization, sparsification and local updates"
+- week: 10
+  date: 2025-10-27
+  title: "No class - Conference trip"
+- week: 10
+  date: 2025-10-29
+  title: Exam
+- week: 11
+  date: 2025-11-03
+  title: "Robust distributed optimization: adversaries, attacks and defenses"
+- week: 11
+  date: 2025-11-05
+  title: "Federated learning: personalization, fairness, and heterogeneity"
+- week: 12
+  date: 2025-11-10
+  title: "Asynchrony, delays and stragglers mitigation"
+- week: 12
+  date: 2025-11-12
+  title: From algorithms to system implementations
+  note: HW 4 due (11/14)
+- week: 13
+  date: 2025-11-17
+  title: "Distributed LLM post-training via deepspeed"
+- week: 13
+  date: 2025-11-19
+  title: Hypeparameter optimization for distributed learning
+- week: 14
+  date: 2025-11-24
+  title: "Multi-objective training for distributed learning"
+- week: 14
+  date: 2025-11-26
+  title: "No class - Thanksgiving"
+  note: HW 5 due (12/1)
+- week: 15
+  date: 2025-12-01
+  title: "Project presentation -"
+- week: 15
+  date: 2025-12-03
+  title: "Project presentation -"
+- week: 16
+  date: 2025-12-08
+  title: "Project presentation -"
