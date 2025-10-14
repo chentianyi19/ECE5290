@@ -1,5 +1,17 @@
 <section id="modules" class="docs-section">
   <h4>Modules</h4>
+
+  {%- comment -%}
+  Detect if any module in _data/modules.yml has readings.
+  This flag will let us conditionally show or hide the "Readings" column.
+  {%- endcomment -%}
+  {%- assign has_readings = false -%}
+  {%- for m in site.data.modules -%}
+    {%- if m.readings and m.readings.size > 0 -%}
+      {%- assign has_readings = true -%}
+    {%- endif -%}
+  {%- endfor -%}
+
   <table class="u-full-width">
     <thead>
       <tr>
@@ -7,6 +19,9 @@
         <th style="width: 140px;">Date</th>
         <th>Topic</th>
         <th style="width: 120px;">Materials</th>
+        {%- if has_readings -%}
+        <th>Readings</th>
+        {%- endif -%}
       </tr>
     </thead>
     <tbody>
@@ -32,6 +47,25 @@
             —
           {%- endif -%}
         </td>
+        {%- if has_readings -%}
+        <td>
+          {%- if m.readings and m.readings.size > 0 -%}
+            <ul style="margin:0; padding-left:1.2em;">
+              {%- for r in m.readings -%}
+                <li>
+                  {%- if r.url -%}
+                    <a href="{{ r.url }}" target="_blank" rel="noopener">{{ r.label }}</a>
+                  {%- else -%}
+                    {{ r.label }}
+                  {%- endif -%}
+                </li>
+              {%- endfor -%}
+            </ul>
+          {%- else -%}
+            —
+          {%- endif -%}
+        </td>
+        {%- endif -%}
       </tr>
       {%- endfor -%}
     </tbody>
