@@ -283,3 +283,67 @@ h4 {
 .modules-accordion .badge.alt{border-color:#c9defc;background:#eef5ff}
 .modules-accordion .badge.neutral{border-color:#e6e6e6;background:#f7f7f7}
 @media (max-width:640px){.modules-accordion .session{grid-template-columns:1fr}.modules-accordion summary{flex-wrap:wrap;gap:6px}.modules-accordion .count{width:100%;order:3;text-align:left}}
+
+/* ===== Modules accordion (stronger selectors + cross-browser marker fixes) ===== */
+#modules .modules-accordion details {
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  background: #fff;
+  margin: 12px 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,.03);
+  overflow: hidden; /* round inner corners */
+}
+
+/* Hide default disclosure bullets/triangles in all browsers */
+#modules .modules-accordion details > summary { 
+  list-style: none; 
+  padding: 10px 14px;
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  cursor: pointer;
+}
+#modules .modules-accordion summary::-webkit-details-marker { display: none; } /* Chrome/Safari */
+#modules .modules-accordion summary::marker { content: ""; }                    /* Firefox */
+
+#modules .modules-accordion .wk { font-weight: 700; }
+#modules .modules-accordion .range { color: #666; font-size: .95rem; }
+#modules .modules-accordion .count { margin-left: auto; color: #888; font-size: .9rem; }
+
+/* Clean inner list */
+#modules .modules-accordion .sessions {
+  list-style: none;
+  margin: 0;
+  padding: 8px 16px 14px 16px;
+}
+#modules .modules-accordion .session {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 12px;
+  padding: 8px 0;
+  border-top: 1px dashed #eee;
+}
+#modules .modules-accordion .session:first-child { border-top: none; }
+#modules .modules-accordion .date { color: #666; font-size: .95rem; }
+#modules .modules-accordion .sum { color: #555; font-size: .95rem; margin-top: 2px; }
+
+/* Badges */
+#modules .modules-accordion .badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  font-size: .85rem;
+  margin-right: 6px;
+  text-decoration: none;
+  color: inherit;
+}
+#modules .modules-accordion .badge.alt { border-color: #c9defc; background: #eef5ff; }
+#modules .modules-accordion .badge.neutral { border-color: #e6e6e6; background: #f7f7f7; }
+
+/* Mobile */
+@media (max-width: 640px) {
+  #modules .modules-accordion .session { grid-template-columns: 1fr; }
+  #modules .modules-accordion summary { flex-wrap: wrap; gap: 6px; }
+  #modules .modules-accordion .count { width: 100%; order: 3; text-align: left; }
+}
