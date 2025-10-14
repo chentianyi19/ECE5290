@@ -1,0 +1,22 @@
+# One entry per module/week
+- week: 1
+  date: 2025-09-02
+  title: "Introduction & Motivation"
+  summary: "Course goals, distributed optimization landscape, examples."
+  slides_url: "/assets/slides/lec01.pdf"
+
+- week: 2
+  date: 2025-09-09
+  title: "Convex Optimization Basics"
+  summary: "Convex sets/functions, optimality, gradient methods."
+  slides_url: "/assets/slides/lec02.pdf"
+ 
+
+# Add more:
+# - week: 3
+#   date: 2025-09-16
+#   title: "Consensus & Decentralized GD"
+#   summary: "Consensus protocols, mixing matrices, rates."
+#   slides_url: "/assets/slides/lec03.pdf"
+#   readings:
+#     - { label: "Nedić & Ozdaglar (2009)", url: "https://..." }
