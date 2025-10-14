@@ -3,51 +3,53 @@ layout: course
 title: ECE 5290/7290 & ORIE 5290
 # permalink: /ECE5290/   # if you want a permalink, use a YAML comment like this
 ---
-<!-- ========== COURSE OVERVIEW ========== -->
-<section id="overview" class="docs-section">
-  <h4>Course Overview</h4>
-  <p>
-    This course covers the theory and practice of distributed optimization for modern machine learning and AI systems.
-    Topics include consensus-based algorithms, federated learning, parallel and asynchronous methods, and optimization for large-scale foundation models.
-  </p>
-  <p><strong>Prerequisites:</strong> Linear algebra, probability, and a basic understanding of machine learning.</p>
-</section>
+ 
+<!-- ========== INSTRUCTORS, TAs, GRADERS ========== -->
+<div class="docs-section" id="people">
+  <h4>Instructor, TAs, and Graders</h4>
+  <div id="member-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: flex-start;">
+    
+    <!-- Instructor -->
+    <div class="box">
+      <img src="/assets/people/tianyi.jpg" alt="Tianyi Chen" style="width: 120px; height: 200px; object-fit: cover; border-radius: 10%;">
+      <p>
+        <b><a href="https://chentianyi1991.github.io/">Tianyi Chen</a></b><br>
+        Instructor<br>
+        <a href="mailto:chentianyi19@gmail.com">Email</a><br>
+        <a href="https://scholar.google.com/citations?user=xxxx" target="_blank">
+          <i class="ai ai-google-scholar ai-2x" style="font-size:20px; color:#14003a"></i>
+        </a>
+      </p>
+    </div>
 
-<!-- ========== SCHEDULE ========== -->
-<section id="schedule" class="docs-section">
-  <h4>Schedule (Tentative)</h4>
-  <table class="u-full-width">
-    <thead>
-      <tr><th>Date</th><th>Topic</th><th>Reading</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Week 1</td><td>Introduction to Distributed Optimization</td><td>[Slides]</td></tr>
-      <tr><td>Week 2</td><td>Convex Optimization Basics</td><td>Nocedal & Wright</td></tr>
-    </tbody>
-  </table>
-</section>
+    <!-- TA Example -->
+    <div class="box">
+      <img src="/assets/people/ta1.jpg" alt="TA Name" style="width: 120px; height: 200px; object-fit: cover; border-radius: 10%;">
+      <p>
+        <b>TA Name</b><br>
+        Teaching Assistant<br>
+        <a href="mailto:ta_email@cornell.edu">Email</a>
+      </p>
+    </div>
 
-<!-- ========== ASSIGNMENTS ========== -->
-<section id="assignments" class="docs-section">
-  <h4>Assignments & Project</h4>
-  <ul>
-    <li><a href="#">HW1: Gradient Descent and Convergence</a> (due MM/DD)</li>
-    <li><a href="#">Project Guidelines</a></li>
-  </ul>
-</section>
-
+    <!-- Grader Example -->
+    <div class="box">
+      <img src="/assets/people/grader1.jpg" alt="Grader Name" style="width: 120px; height: 200px; object-fit: cover; border-radius: 10%;">
+      <p>
+        <b>Grader Name</b><br>
+        Grader<br>
+        <a href="mailto:grader_email@cornell.edu">Email</a>
+      </p>
+    </div>
+  </div>
+</div>
+ 
 <!-- ========== SUGGESTED READINGS ========== -->
 <div class="docs-section" id="readings">
   <h4>Suggested Readings</h4>
   <p style="font-size: 18px;">These papers provide background and deeper insights into distributed optimization and federated learning. We will update the list throughout the semester.</p>
 
-  <!-- Tabs for categories -->
-  <ul class="tab-nav">
-    <li><div class="button active" data-ref="#readings-core">Core</div></li>
-    <li><div class="button" data-ref="#readings-advanced">Advanced</div></li>
-    <li><div class="button" data-ref="#readings-recent">Recent Research</div></li>
-  </ul>
-
+ 
   <div class="tab-content">
     <!-- Core Readings -->
     <div class="tab-pane active" id="readings-core">
@@ -96,42 +98,4 @@ title: ECE 5290/7290 & ORIE 5290
   </div>
 </div>
 
-<!-- ========== INSTRUCTORS, TAs, GRADERS ========== -->
-<div class="docs-section" id="people">
-  <h4>Instructor, TAs, and Graders</h4>
-  <div id="member-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: flex-start;">
-    
-    <!-- Instructor -->
-    <div class="box">
-      <img src="/assets/people/tianyi.jpg" alt="Tianyi Chen" style="width: 120px; height: 200px; object-fit: cover; border-radius: 10%;">
-      <p>
-        <b><a href="https://chentianyi1991.github.io/">Tianyi Chen</a></b><br>
-        Instructor<br>
-        <a href="mailto:chentianyi19@gmail.com">Email</a><br>
-        <a href="https://scholar.google.com/citations?user=xxxx" target="_blank">
-          <i class="ai ai-google-scholar ai-2x" style="font-size:20px; color:#14003a"></i>
-        </a>
-      </p>
-    </div>
-
-    <!-- TA Example -->
-    <div class="box">
-      <img src="/assets/people/ta1.jpg" alt="TA Name" style="width: 120px; height: 200px; object-fit: cover; border-radius: 10%;">
-      <p>
-        <b>TA Name</b><br>
-        Teaching Assistant<br>
-        <a href="mailto:ta_email@cornell.edu">Email</a>
-      </p>
-    </div>
-
-    <!-- Grader Example -->
-    <div class="box">
-      <img src="/assets/people/grader1.jpg" alt="Grader Name" style="width: 120px; height: 200px; object-fit: cover; border-radius: 10%;">
-      <p>
-        <b>Grader Name</b><br>
-        Grader<br>
-        <a href="mailto:grader_email@cornell.edu">Email</a>
-      </p>
-    </div>
-  </div>
-</div>
+ 
