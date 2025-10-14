@@ -1,0 +1,12 @@
+# One entry per assignment or project milestone
+- id: "hw1"
+  title: "HW1: Gradient Descent & Convergence"
+  due: 2025-09-19
+  pdf: "/assets/hw/hw1.pdf"
+  starter: "/assets/hw/hw1_starter.zip"
+
+- id: "proj"
+  title: "Project Guidelines"
+  due: null
+  pdf: "/assets/project/guidelines.pdf"
+  starter: null
