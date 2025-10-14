@@ -5,6 +5,30 @@
   pdf: "/assets/hw/hw1.pdf"
   starter: "/assets/hw/hw1_starter.zip"
 
+- id: "hw2"
+  title: "HW2"
+  due: 2025-09-26
+  pdf: ""
+  starter: ""
+  
+- id: "hw3"
+  title: "HW3"
+  due: 2025-10-20
+  pdf: ""
+  starter: ""
+  
+- id: "hw4"
+  title: "HW4"
+  due: 2025-11-14
+  pdf: ""
+  starter: ""
+  
+- id: "hw5"
+  title: "HW5"
+  due: 2025-12-01
+  pdf: ""
+  starter: ""
+
 - id: "proj"
   title: "Project Guidelines"
   due: null
