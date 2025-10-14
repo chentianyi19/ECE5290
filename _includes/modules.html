@@ -1,0 +1,39 @@
+<section id="modules" class="docs-section">
+  <h4>Modules</h4>
+  <table class="u-full-width">
+    <thead>
+      <tr>
+        <th style="width: 80px;">Week</th>
+        <th style="width: 140px;">Date</th>
+        <th>Topic</th>
+        <th style="width: 120px;">Materials</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%- assign modules = site.data.modules | sort: "week" -%}
+      {%- for m in modules -%}
+      <tr>
+        <td>Week {{ m.week }}</td>
+        <td>
+          {%- if m.date -%}
+            {{ m.date | date: "%b %d, %Y" }}
+          {%- else -%}
+            TBA
+          {%- endif -%}
+        </td>
+        <td>
+          <strong>{{ m.title }}</strong>
+          {%- if m.summary %}<div style="font-size:.95em;color:#555">{{ m.summary }}</div>{% endif -%}
+        </td>
+        <td>
+          {%- if m.slides_url -%}
+            <a href="{{ m.slides_url }}">Slides</a>
+          {%- else -%}
+            —
+          {%- endif -%}
+        </td>
+      </tr>
+      {%- endfor -%}
+    </tbody>
+  </table>
+</section>
