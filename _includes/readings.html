@@ -6,7 +6,7 @@
   </p>
 
   {%- comment -%} sort newest first; remove if you prefer input order {%- endcomment -%}
-  {%- assign papers = site.data.publications.papers | sort: "year" | reverse -%}
+  {%- assign papers = site.data.papers | sort: "year" | reverse -%}
 
   <div id="papers-all">
     {%- for paper in papers -%}
