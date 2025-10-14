@@ -40,8 +40,6 @@
   </nav>
   
   <!-- ========== INSTRUCTORS, TAs, GRADERS ========== -->
-   {% include people.html %}
- 
   <!-- Content Sections -->
   <section id="overview">
     <h4>Course Overview</h4>
@@ -61,7 +59,8 @@ when they are used to solve large-scale distributed problems arising in AI, mach
 
 
   <!-- ADDED: render page-specific content (your Suggested Readings & People from index.html) -->
-  {{ content }}
+     {% include readings.html %}
+ 
 
  
 
@@ -72,6 +71,10 @@ when they are used to solve large-scale distributed problems arising in AI, mach
       <li><a href="https://nocedal.github.io/">Numerical Optimization by Nocedal & Wright</a></li>
     </ul>
   </section>
+
+
+     {% include people.html %}
+ 
 
     <section id="policies">
     <h4>Course Policies</h4>
