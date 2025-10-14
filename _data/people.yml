@@ -5,14 +5,16 @@
   email: "tianyi.chen@cornell.edu"
   photo: "/assets/people/tianyi.jpg"
   homepage: "https://chentianyi19.github.io/"
-  scholar: "https://scholar.google.com/citations?user=xxxx"
+ 
 
-- name: "TA Name"
+- name: "Yuheng Wang"
   role: "Teaching Assistant"
-  email: "ta_email@cornell.edu"
-  photo: "/assets/people/ta1.jpg"
+  email: "yw634@cornell.edu"
+  photo: "/assets/people/yuheng.jpg"
+  homepage: "https://sites.google.com/cornell.edu/yuhengwang"
 
-- name: "Grader Name"
+- name: "Anisha Kechaphna"
   role: "Grader"
-  email: "grader_email@cornell.edu"
-  photo: "/assets/people/grader1.jpg"
+  email: "ak2693@cornell.edu"
+  photo: "/assets/people/anisha.jpg"
+  homepage: "https://www.linkedin.com/in/anisha-ks/?originalSubdomain=in"
