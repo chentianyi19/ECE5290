@@ -1,0 +1,29 @@
+# _data/publications/papers.yml
+- title: "Distributed Optimization and Statistical Learning via ADMM"
+  authors: "S. Boyd, N. Parikh, E. Chu, et al."
+  venue: "Foundations and Trends in Machine Learning, 2011"
+  note: "Classic monograph on ADMM."
+  paper_pdf: "https://web.stanford.edu/~boyd/papers/pdf/admm_distr_stats.pdf"
+  slides: ""
+  poster: ""
+  video: ""
+  code: ""
+  talk: ""
+  data: ""
+  year: 2011
+  tags: ["core"]
+
+- title: "Federated Learning: Strategies for Improving Communication Efficiency"
+  authors: "P. Kairouz et al."
+  venue: "arXiv, 2021"
+  note: ""
+  paper_pdf: "https://arxiv.org/abs/1912.04977"
+  year: 2021
+  tags: ["core","federated"]
+
+- title: "Gradient Tracking for Decentralized Optimization"
+  authors: "A. Nedić, A. Olshevsky, W. Shi"
+  venue: "IEEE TAC"
+  paper_pdf: "https://arxiv.org/abs/1705.07298"
+  year: 2017
+  tags: ["advanced","decentralized"]
