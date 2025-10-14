@@ -1,0 +1,21 @@
+<section id="assignments" class="docs-section">
+  <h4>Assignments & Project</h4>
+  <ul>
+    {%- assign asg = site.data.assignments -%}
+    {%- for a in asg -%}
+      <li>
+        {%- if a.pdf -%}
+          <a href="{{ a.pdf }}">{{ a.title }}</a>
+        {%- else -%}
+          {{ a.title }}
+        {%- endif -%}
+        {%- if a.due -%}
+          &nbsp;(<em>due {{ a.due | date: "%b %d, %Y" }}</em>)
+        {%- endif -%}
+        {%- if a.starter -%}
+          &nbsp;— <a href="{{ a.starter }}">starter code</a>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+</section>
