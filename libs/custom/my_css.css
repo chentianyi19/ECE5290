@@ -268,67 +268,52 @@ h4 {
     height: 70px;
   }
 }
-.modules-accordion details{border:1px solid #eee;border-radius:10px;margin:10px 0;background:#fff}
-.modules-accordion summary{cursor:pointer;list-style:none;padding:10px 14px;display:flex;gap:12px;align-items:baseline}
-.modules-accordion summary::-webkit-details-marker{display:none}
-.modules-accordion .wk{font-weight:700}
-.modules-accordion .range{color:#666;font-size:.95rem}
-.modules-accordion .count{margin-left:auto;color:#888;font-size:.9rem}
-.modules-accordion .sessions{padding:8px 16px 14px 16px;margin:0}
-.modules-accordion .session{display:grid;grid-template-columns:120px 1fr;gap:12px;padding:8px 0;border-top:1px dashed #eee}
-.modules-accordion .session:first-child{border-top:none}
-.modules-accordion .date{color:#666;font-size:.95rem}
-.modules-accordion .sum{color:#555;font-size:.95rem;margin-top:2px}
-.modules-accordion .badge{display:inline-block;padding:2px 8px;border:1px solid #ddd;border-radius:999px;font-size:.85rem;margin-right:6px}
-.modules-accordion .badge.alt{border-color:#c9defc;background:#eef5ff}
-.modules-accordion .badge.neutral{border-color:#e6e6e6;background:#f7f7f7}
-@media (max-width:640px){.modules-accordion .session{grid-template-columns:1fr}.modules-accordion summary{flex-wrap:wrap;gap:6px}.modules-accordion .count{width:100%;order:3;text-align:left}}
+ 
 
-/* ===== Modules accordion (stronger selectors + cross-browser marker fixes) ===== */
-#modules .modules-accordion details {
-  border: 1px solid #e6e6e6;
-  border-radius: 12px;
-  background: #fff;
-  margin: 12px 0;
-  box-shadow: 0 1px 2px rgba(0,0,0,.03);
-  overflow: hidden; /* round inner corners */
+/* ===== Scoped Modules accordion styles (SAFE) ===== */
+#modules details {
+  border: 1px solid #e6e6e6 !important;
+  border-radius: 12px !important;
+  background: #fff !important;
+  margin: 12px 0 !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,.03) !important;
+  overflow: hidden !important; /* round inner corners */
 }
 
-/* Hide default disclosure bullets/triangles in all browsers */
-#modules .modules-accordion details > summary { 
-  list-style: none; 
+/* Hide default disclosure markers, but only in #modules */
+#modules details > summary {
+  list-style: none;
   padding: 10px 14px;
   display: flex;
   gap: 12px;
   align-items: baseline;
   cursor: pointer;
 }
-#modules .modules-accordion summary::-webkit-details-marker { display: none; } /* Chrome/Safari */
-#modules .modules-accordion summary::marker { content: ""; }                    /* Firefox */
+#modules summary::-webkit-details-marker { display: none; }
+#modules summary::marker { content: ""; }
 
-#modules .modules-accordion .wk { font-weight: 700; }
-#modules .modules-accordion .range { color: #666; font-size: .95rem; }
-#modules .modules-accordion .count { margin-left: auto; color: #888; font-size: .9rem; }
+#modules .wk { font-weight: 700; }
+#modules .range { color: #666; font-size: .95rem; }
+#modules .count { margin-left: auto; color: #888; font-size: .9rem; }
 
-/* Clean inner list */
-#modules .modules-accordion .sessions {
-  list-style: none;
-  margin: 0;
-  padding: 8px 16px 14px 16px;
+/* Inner list — remove bullets ONLY here */
+#modules .sessions {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 8px 16px 14px 16px !important;
 }
-#modules .modules-accordion .session {
+#modules .session {
   display: grid;
   grid-template-columns: 140px 1fr;
   gap: 12px;
   padding: 8px 0;
   border-top: 1px dashed #eee;
 }
-#modules .modules-accordion .session:first-child { border-top: none; }
-#modules .modules-accordion .date { color: #666; font-size: .95rem; }
-#modules .modules-accordion .sum { color: #555; font-size: .95rem; margin-top: 2px; }
+#modules .session:first-child { border-top: none; }
+#modules .date { color: #666; font-size: .95rem; }
+#modules .sum { color: #555; font-size: .95rem; margin-top: 2px; }
 
-/* Badges */
-#modules .modules-accordion .badge {
+#modules .badge {
   display: inline-block;
   padding: 2px 8px;
   border: 1px solid #ddd;
@@ -338,12 +323,12 @@ h4 {
   text-decoration: none;
   color: inherit;
 }
-#modules .modules-accordion .badge.alt { border-color: #c9defc; background: #eef5ff; }
-#modules .modules-accordion .badge.neutral { border-color: #e6e6e6; background: #f7f7f7; }
+#modules .badge.alt { border-color: #c9defc; background: #eef5ff; }
+#modules .badge.neutral { border-color: #e6e6e6; background: #f7f7f7; }
 
 /* Mobile */
 @media (max-width: 640px) {
-  #modules .modules-accordion .session { grid-template-columns: 1fr; }
-  #modules .modules-accordion summary { flex-wrap: wrap; gap: 6px; }
-  #modules .modules-accordion .count { width: 100%; order: 3; text-align: left; }
+  #modules .session { grid-template-columns: 1fr; }
+  #modules summary { flex-wrap: wrap; gap: 6px; }
+  #modules .count { width: 100%; order: 3; text-align: left; }
 }
