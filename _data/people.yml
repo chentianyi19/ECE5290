@@ -1,0 +1,18 @@
+# _data/people.yml
+
+- name: "Tianyi Chen"
+  role: "Instructor"
+  email: "tianyi.chen@cornell.edu"
+  photo: "/assets/people/tianyi.jpg"
+  homepage: "https://chentianyi19.github.io/"
+  scholar: "https://scholar.google.com/citations?user=xxxx"
+
+- name: "TA Name"
+  role: "Teaching Assistant"
+  email: "ta_email@cornell.edu"
+  photo: "/assets/people/ta1.jpg"
+
+- name: "Grader Name"
+  role: "Grader"
+  email: "grader_email@cornell.edu"
+  photo: "/assets/people/grader1.jpg"
