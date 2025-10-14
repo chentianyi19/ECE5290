@@ -44,7 +44,7 @@
   <nav class="navbar" style="margin-bottom: 20px;">
     <ul class="navbar-list" style="display: flex; justify-content: center; gap: 20px; list-style: none;">
       <li><a class="navbar-link" href="#overview">Overview</a></li>
-      <li><a class="navbar-link" href="#schedule">Schedule</a></li>
+      <li><a class="navbar-link" href="#modules">Modules</a></li>
       <li><a class="navbar-link" href="#assignments">Assignments</a></li>
       <li><a class="navbar-link" href="#policies">Policies</a></li>
       <li><a class="navbar-link" href="#resources">Resources</a></li>
@@ -65,27 +65,8 @@
     </ul>
   </section>
 
-  <section id="schedule">
-    <h4>Schedule</h4>
-    <table class="u-full-width">
-      <thead>
-        <tr><th>Date</th><th>Topic</th><th>Reading</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Week 1</td><td>Introduction and Motivation</td><td>[Slides]</td></tr>
-        <tr><td>Week 2</td><td>Convex Optimization Basics</td><td>[Nocedal & Wright]</td></tr>
-      </tbody>
-    </table>
-  </section>
-
-  <section id="assignments">
-    <h4>Assignments & Project</h4>
-    <p>There will be 3 homework assignments and a final project.</p>
-    <ul>
-      <li><a href="#">HW1: Gradient Descent and Convergence (PDF)</a></li>
-      <li><a href="#">Project Guidelines</a></li>
-    </ul>
-  </section>
+  {% include modules.html %}
+  {% include assignments.html %}
 
 
   <!-- ADDED: render page-specific content (your Suggested Readings & People from index.html) -->
