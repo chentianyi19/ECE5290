@@ -274,15 +274,15 @@ h4 {
 .modules-accordion summary { cursor: pointer; list-style: none; padding: 10px 14px; display: flex; gap: 12px; align-items: baseline; }
 .modules-accordion summary::-webkit-details-marker { display: none; }
 .modules-accordion .wk { font-weight: 700; }
-.modules-accordion .range { color: #666; font-size: 1.1rem; }
-.modules-accordion .count { margin-left: auto; color: #888; font-size: 1.1rem; }
+.modules-accordion .range { color: #666; font-size: 1.15rem; }
+.modules-accordion .count { margin-left: auto; color: #888; font-size: 1.15rem; }
 
 .modules-accordion .sessions { padding: 8px 16px 14px 16px; margin: 0; }
 .modules-accordion .session { display: grid; grid-template-columns: 120px 1fr; gap: 12px; padding: 8px 0; border-top: 1px dashed #eee; }
 .modules-accordion .session:first-child { border-top: none; }
 .modules-accordion .date { color: #666; font-size: 1.15rem; }
 .modules-accordion .sum { color: #555; font-size: 1.15rem; margin-top: 2px; }
-.modules-accordion .badge { display: inline-block; padding: 2px 8px; border: 1px solid #ddd; border-radius: 999px; font-size: 1.05rem; margin-right: 6px; }
+.modules-accordion .badge { display: inline-block; padding: 2px 8px; border: 1px solid #ddd; border-radius: 999px; font-size: 1.1rem; margin-right: 6px; }
 .modules-accordion .badge.alt { border-color: #c9defc; background: #eef5ff; }
 .modules-accordion .badge.neutral { border-color: #e6e6e6; background: #f7f7f7; }
 
@@ -299,7 +299,7 @@ h4 {
   padding: 18px 22px;
   margin: 25px 0 35px;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 1.4rem;
   line-height: 1.6;
 }
 .notice-box p {
