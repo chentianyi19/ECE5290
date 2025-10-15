@@ -61,11 +61,3 @@ All course content © 2025 [Tianyi Chen](https://chen.tech.cornell.edu/).
 Materials may be reused for **educational or research purposes** with attribution.  
 Commercial redistribution is not permitted.
 
----
-
-<p align="center">
-  <img src="https://chentianyi1991.github.io/ECE5290/assets/tech.jpeg" alt="Cornell Tech" width="160">
-</p>
-<p align="center">
-  <i>Hosted by Cornell Tech · Empowering scalable and trustworthy machine learning research</i>
-</p>
