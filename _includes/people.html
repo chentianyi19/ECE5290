@@ -6,7 +6,7 @@
 
     {%- for person in site.data.people -%}
     <div class="box" style="text-align: center; width: 160px;">
-      <img src="{{ person.photo }}" alt="{{ person.name }}"
+     <img src="{{ person.photo | relative_url }}" alt="{{ person.name }}"
            style="width: 120px; height: 200px; object-fit: cover; border-radius: 10%;">
 
       <p style="margin-top: 8px;">
