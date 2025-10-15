@@ -269,24 +269,97 @@ h4 {
   }
 }
 
-.modules-accordion details { border: 1px solid #eee; border-radius: 10px; margin: 10px 0; background: #fff; }
-.modules-accordion summary { cursor: pointer; list-style: none; padding: 10px 14px; display: flex; gap: 12px; align-items: baseline; }
-.modules-accordion summary::-webkit-details-marker { display: none; }
-.modules-accordion .wk { font-weight: 700; }
-.modules-accordion .range { color: #666; font-size: .95rem; }
-.modules-accordion .count { margin-left: auto; color: #888; font-size: .9rem; }
+/* ====== MODULES SECTION FONT ENHANCEMENT ====== */
+.modules-accordion {
+  font-size: 1.05rem;            /* base font slightly larger */
+  line-height: 1.55;
+}
 
-.modules-accordion .sessions { padding: 8px 16px 14px 16px; margin: 0; }
-.modules-accordion .session { display: grid; grid-template-columns: 120px 1fr; gap: 12px; padding: 8px 0; border-top: 1px dashed #eee; }
-.modules-accordion .session:first-child { border-top: none; }
-.modules-accordion .date { color: #666; font-size: .95rem; }
-.modules-accordion .sum { color: #555; font-size: .95rem; margin-top: 2px; }
-.modules-accordion .badge { display: inline-block; padding: 2px 8px; border: 1px solid #ddd; border-radius: 999px; font-size: .85rem; margin-right: 6px; }
-.modules-accordion .badge.alt { border-color: #c9defc; background: #eef5ff; }
-.modules-accordion .badge.neutral { border-color: #e6e6e6; background: #f7f7f7; }
+/* Week summary line (Week X — date range) */
+.modules-accordion summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 14px 18px;
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.modules-accordion summary .wk {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+.modules-accordion summary .range {
+  color: #444;
+  font-size: 1rem;
+}
+.modules-accordion summary .count {
+  margin-left: auto;
+  color: #666;
+  font-size: 0.95rem;
+}
 
+/* Each class session entry */
+.modules-accordion .session {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 16px;
+  padding: 10px 0;
+  border-top: 1px dashed #ddd;
+  font-size: 1.05rem;
+}
+.modules-accordion .session:first-child {
+  border-top: none;
+}
+
+.modules-accordion .date {
+  color: #333;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.modules-accordion .title strong {
+  font-size: 1.05rem;
+  color: #111;
+}
+
+.modules-accordion .sum {
+  font-size: 0.98rem;
+  color: #555;
+  margin-top: 3px;
+}
+
+/* Badges (Slides, HW Due, No Class, etc.) */
+.modules-accordion .badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border: 1px solid #bbb;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  margin-right: 6px;
+  background: #fafafa;
+}
+.modules-accordion .badge.alt {
+  border-color: #bcd5f9;
+  background: #eaf3ff;
+}
+.modules-accordion .badge.neutral {
+  border-color: #e0e0e0;
+  background: #f6f6f6;
+  color: #333;
+}
+
+/* Responsive adjustments for mobile */
 @media (max-width: 640px) {
-  .modules-accordion .session { grid-template-columns: 1fr; }
-  .modules-accordion summary { flex-wrap: wrap; gap: 6px; }
-  .modules-accordion .count { width: 100%; order: 3; text-align: left; }
+  .modules-accordion summary {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .modules-accordion .session {
+    grid-template-columns: 1fr;
+  }
+  .modules-accordion {
+    font-size: 1rem;
+  }
 }
