@@ -1,8 +1,8 @@
 <!-- ========== SUGGESTED READINGS (YAML-driven) ========== -->
 <section class="docs-section" id="readings">
   <h4>Suggested Readings</h4>
-  <p style="font-size:18px">
-    These papers provide background and deeper insights into distributed optimization and federated learning.
+  <p style="font-size:12px">
+    These papers offer background and provide deeper insights into distributed optimization and its applications in machine learning. 
   </p>
 
   {%- comment -%} sort newest first; remove if you prefer input order {%- endcomment -%}
@@ -12,8 +12,7 @@
     {%- for paper in papers -%}
       <div class="paper">
         <p class="title"><b>{{ paper.title }}</b></p>
-        <p>{{ paper.authors }}</p>
-        <p><i>{{ paper.venue }}</i></p>
+        <p>{{ paper.authors }}; <i>{{ paper.venue }}</i></p>
         {%- if paper.note %}<p>{{ paper.note }}</p>{% endif %}
 
         <div class="paper-buttons">
