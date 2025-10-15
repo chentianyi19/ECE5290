@@ -363,3 +363,21 @@ h4 {
     font-size: 1rem;
   }
 }
+
+/* Course notice */
+.course-notice {
+  border-left: 5px solid #b31b1b;         /* Cornell red accent */
+  background: #fdf5f5;
+  padding: 15px 18px;
+  margin: 20px 0 30px;
+  border-radius: 6px;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+.course-notice a {
+  color: #005ea2;
+  text-decoration: underline;
+}
+.course-notice strong {
+  color: #000;
+}
