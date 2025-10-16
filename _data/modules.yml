@@ -4,7 +4,8 @@
   date: 2025-08-25
   title: "Introduction & Motivation"
   summary: "Course goals, distributed optimization landscape, examples."
-  slides_url: "/assets/slides/Lec1.pdf"
+  slides_url: "https://raw.githubusercontent.com/chentianyi19/ECE5290/main/assets/slides/Lec1.pdf"
+
   
 - week: 1
   date: 2025-08-27
