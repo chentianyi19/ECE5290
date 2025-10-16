@@ -11,7 +11,7 @@
   date: 2025-08-27
   title: "ML fundamentals for optimization (ERM, supervised learning)"
   summary: "Convex sets/functions, optimality, gradient methods."
-  slides_url: "/assets/slides/Lec2.pdf"
+  slides_url: "https://raw.githubusercontent.com/chentianyi19/ECE5290/main/assets/slides/Lec2.pdf"
  
 - week: 2
   date: 2025-09-01
@@ -20,66 +20,66 @@
   date: 2025-09-03
   title: "ML fundamentals for optimization (ERM, supervised learning)"
   summary: "Nonlinear regression, optimization challenges, general loss functions, machine learning types."
-  slides_url: "/assets/slides/Lec3.pdf"
+ slides_url: "https://raw.githubusercontent.com/chentianyi19/ECE5290/main/assets/slides/Lec3.pdf"
   
 - week: 3
   date: 2025-09-08
   title: "Optimization basics: gradient descent - quadratic problems"
   summary: "Gradient methods, convergence analysis, quadratic optimizations."
-  slides_url: "/assets/slides/Lec4.pdf"
+  slides_url: "https://raw.githubusercontent.com/chentianyi19/ECE5290/main/assets/slides/Lec4.pdf"
 - week: 3
   date: 2025-09-10
   title: "Optimization basics: gradient descent - convergence and complexity"
   note: HW 1 due (9/12)
   summary: "Strongly convex optimization, smoothness, sublinear convergence."
-  slides_url: "/assets/slides/Lec5.pdf"
+  slides_url: "https://raw.githubusercontent.com/chentianyi19/ECE5290/main/assets/slides/Lec5.pdf"
   
 - week: 4
   date: 2025-09-15
-  title: Gradient methods for constrained optimization
+  title: "Optimization basics: gradient descent - convergence and complexity" 
   summary: "Convexity, smoothness, convergence behavior in non-convex settings."
-  slides_url: "/assets/slides/Lec6.pdf"
+ slides_url: "https://raw.githubusercontent.com/chentianyi19/ECE5290/main/assets/slides/Lec6.pdf"
 - week: 4
   date: 2025-09-17
-  title: "Stochastic optimization: SGD, minibatching, and convergence rates"
+  title: Gradient methods for constrained optimization 
   summary: "Distributed optimization, constraints, projected gradient descent, convergence rates."
-  slides_url: "/assets/slides/Lec7.pdf"
+  slides_url: "https://raw.githubusercontent.com/chentianyi19/ECE5290/main/assets/slides/Lec7.pdf"
   
 - week: 5
   date: 2025-09-22
-  title: "Variance reduction for finite-sum optimization (SVRG)"
+  title: "Stochastic optimization: SGD, minibatching, and convergence rates" 
   summary: "Stochastic gradient descent, convergence, variance reduction."
-  slides_url: "/assets/slides/Lec8.pdf"
+  slides_url: "https://raw.githubusercontent.com/chentianyi19/ECE5290/main/assets/slides/Lec8.pdf"
   
 - week: 5
   date: 2025-09-24
-  title: "Momentum methods: Polyak and their stochastic variants"
+  title: Variance reduction and momentum
   summary: "Variance reduction, momentum, accelerated convergence."
-  slides_url: "/assets/slides/Lec9.pdf"
+  slides_url: "https://raw.githubusercontent.com/chentianyi19/ECE5290/main/assets/slides/Lec9.pdf"
   
 - week: 6
   date: 2025-09-29
-  title: Adaptive methods and recent developments
+  title: Variance reduction and momentum for SGD
   summary: "Variance reduction, momentum, finite-sum optimization."
   note: HW 2 due (9/26)
-  slides_url: "/assets/slides/Lec10.pdf"
+  slides_url: "https://raw.githubusercontent.com/chentianyi19/ECE5290/main/assets/slides/Lec10.pdf"
 - week: 6
   date: 2025-10-01
   title: Consensus and spectrum of graphs
   summary: "Consensus, doubly stochastic weights, graph connectivity."
   note: Project announced
-  slides_url: "/assets/slides/Lec11.pdf"
+  slides_url: "https://raw.githubusercontent.com/chentianyi19/ECE5290/main/assets/slides/Lec11.pdf"
   
 - week: 7
   date: 2025-10-06
   title: Gossip and random walks
   summary: "Randomized gossip, push-sum, asynchronous consensus."
-  slides_url: "/assets/slides/Lec12.pdf"
+  slides_url: "https://raw.githubusercontent.com/chentianyi19/ECE5290/main/assets/slides/Lec12.pdf"
 - week: 7
   date: 2025-10-08
   title: "Data parallelism, parallel SGD, local SGD, synchronization trade-off."
   summary: "Gradient methods, convergence analysis, quadratic optimizations."
-  slides_url: "/assets/slides/Lec13.pdf"
+  slides_url: "https://raw.githubusercontent.com/chentianyi19/ECE5290/main/assets/slides/Lec13.pdf"
 - week: 8
   date: 2025-10-13
   title: "No class - Fall break"
