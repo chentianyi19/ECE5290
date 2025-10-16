@@ -38,7 +38,7 @@
   date: 2025-09-15
   title: "Optimization basics: gradient descent - convergence and complexity" 
   summary: "Convexity, smoothness, convergence behavior in non-convex settings."
- slides_url: "https://raw.githubusercontent.com/chentianyi19/ECE5290/main/assets/slides/Lec6.pdf"
+  slides_url: "https://raw.githubusercontent.com/chentianyi19/ECE5290/main/assets/slides/Lec6.pdf"
 - week: 4
   date: 2025-09-17
   title: Gradient methods for constrained optimization 
