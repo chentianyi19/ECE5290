@@ -2,25 +2,25 @@
 - id: "hw1"
   title: "HW1: Gradient Descent & Convergence"
   due: 2025-09-19
-  pdf: "/assets/hw/hw1.pdf"
+  pdf: "https://raw.githubusercontent.com/chentianyi19/ECE5290/main/assets/hw/hw1.pdf"
   starter: ""
 
 - id: "hw2"
   title: "HW2"
   due: 2025-09-26
-  pdf: "/assets/hw/hw2.pdf"
-  starter: "/assets/hw/hw2_starter.py"
+  pdf: "https://raw.githubusercontent.com/chentianyi19/ECE5290/main/assets/hw/hw2.pdf"
+  starter: "https://raw.githubusercontent.com/chentianyi19/ECE5290/main/assets/hw/hw2_starter.py"
   
 - id: "hw3"
   title: "HW3"
   due: 2025-10-20
-  pdf: "/assets/hw/hw3.pdf"
+  pdf: "https://raw.githubusercontent.com/chentianyi19/ECE5290/main/assets/hw/hw3.pdf"
   starter: ""
   
 - id: "hw4"
   title: "HW4"
   due: 2025-11-14
-  pdf: "/assets/hw/hw4.pdf"
+  pdf: "https://raw.githubusercontent.com/chentianyi19/ECE5290/main/assets/hw/hw4.pdf"
   starter: ""
   
 - id: "hw5"
