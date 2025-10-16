@@ -20,7 +20,7 @@
   date: 2025-09-03
   title: "ML fundamentals for optimization (ERM, supervised learning)"
   summary: "Nonlinear regression, optimization challenges, general loss functions, machine learning types."
- slides_url: "https://raw.githubusercontent.com/chentianyi19/ECE5290/main/assets/slides/Lec3.pdf"
+  slides_url: "https://raw.githubusercontent.com/chentianyi19/ECE5290/main/assets/slides/Lec3.pdf"
   
 - week: 3
   date: 2025-09-08
