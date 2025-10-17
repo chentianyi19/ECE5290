@@ -2,6 +2,9 @@
   <h4>Assignments & Project</h4>
 
   {%- assign asg = site.data.assignments -%}
+  {%- assign today_ymd = site.time | date: "%Y-%m-%d" -%}
+  {%- assign window_end_ts = site.time | date: "%s" | plus: 604800 -%}
+  {%- assign window_end_ymd = window_end_ts | date: "%Y-%m-%d" -%}
 
   <ul class="asg-list">
     {%- for a in asg -%}
@@ -16,25 +19,22 @@
           {%- endif -%}
 
           {%- if a.due -%}
-            {%- assign today_ts = site.time | date: "%s" | plus: 0 -%}
-            {%- assign window_end = today_ts | plus: 604800 -%}  <!-- 7 days -->
-            {%- assign due_ts_raw = a.due | date: "%s" -%}
-            {%- assign due_ts = due_ts_raw | plus: 0 -%} {% comment %} coerce to number; if parse fails -> 0 {% endcomment %}
-            {%- assign has_valid_due = due_ts > 0 -%}
-            {%- assign is_past = has_valid_due and (due_ts < today_ts) -%}
-            {%- assign is_upcoming = has_valid_due and (due_ts >= today_ts) and (due_ts < window_end) -%}
-                          
-              <span class="asg-badge
-                {% if is_past %}
-                  asg-badge-past
-                {% elsif is_upcoming %}
-                  asg-badge-upcoming
-                {% else %}
-                  asg-badge-due
-                {% endif %}">
-                {% if is_past %}Past:{% else %}Due:{% endif %}
-                {{ a.due | date: "%b %d, %Y" }}
-              </span>
+            {%- assign due_ymd = a.due | date: "%Y-%m-%d" -%}
+
+            {%- assign is_past = due_ymd < today_ymd -%}
+            {%- assign is_upcoming = (due_ymd >= today_ymd) and (due_ymd < window_end_ymd) -%}
+
+            <span class="asg-badge
+              {% if is_past %}
+                asg-badge-past
+              {% elsif is_upcoming %}
+                asg-badge-upcoming
+              {% else %}
+                asg-badge-due
+              {% endif %}">
+              {% if is_past %}Past:{% else %}Due:{% endif %}
+              {{ a.due | date: "%b %d, %Y" }}
+            </span>
           {%- endif -%}
         </div>
 
