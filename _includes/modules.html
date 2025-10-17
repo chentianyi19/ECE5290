@@ -27,7 +27,7 @@
             <strong>{{ m.title }}</strong>
             {%- if m.summary %}<div class="sum">{{ m.summary }}</div>{% endif -%}
             <div class="meta">
-              {%- if m.slides_url %}<a class="badge" href="{{ m.slides_url }}">Slides</a>{% endif -%}
+              {%- if m.slides_url %}<a class="badge" href="{{ m.slides_url  | relative_url}}">Slides</a>{% endif -%}
               {%- if m.note %}<span class="badge alt">{{ m.note }}</span>{% endif -%}
               {%- if m.title contains "No class" %}<span class="badge neutral">No Class</span>{% endif -%}
               {%- if m.title contains "Exam" %}<span class="badge neutral">Exam</span>{% endif -%}
