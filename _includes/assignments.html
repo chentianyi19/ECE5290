@@ -19,13 +19,14 @@
               {%- assign diff_secs = due_ts | minus: today_ts -%}
               {%- assign diff_days = diff_secs | divided_by: 86400 -%}
               {%- assign is_upcoming = diff_days >= 0 and diff_days < 10 -%}
+              {%- assign is_future = diff_days >= 0 and diff_days >= 10 -%}  
               
               <span class="asg-badge
                 {% if due_ts < today_ts %}
                   asg-badge-past
                 {% elsif is_upcoming %}
                   asg-badge-upcoming
-                {% else %}
+                {% elseif is_future %}
                   asg-badge-due
                 {% endif %}">
                 {% if due_ts < today_ts %}Past:{% else %}Due:{% endif %}
