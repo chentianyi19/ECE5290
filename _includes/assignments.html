@@ -5,7 +5,7 @@
     {%- for a in asg -%}
       <li>
         {%- if a.pdf -%}
-          <a href="{{ a.pdf }}">{{ a.title }}</a>
+          <a href="{{ a.pdf  | relative_url}}">{{ a.title }}</a>
         {%- else -%}
           {{ a.title }}
         {%- endif -%}
@@ -13,7 +13,7 @@
           &nbsp;(<em>due {{ a.due | date: "%b %d, %Y" }}</em>)
         {%- endif -%}
         {%- if a.starter -%}
-          &nbsp;— <a href="{{ a.starter }}">starter code</a>
+          &nbsp;— <a href="{{ a.starter  | relative_url}}">starter code</a>
         {%- endif -%}
       </li>
     {%- endfor -%}
