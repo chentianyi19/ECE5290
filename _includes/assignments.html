@@ -16,16 +16,14 @@
           {%- endif -%}
 
           {%- if a.due -%}
-              {%- assign today_ts = site.time | date: "%s" | plus: 0 -%}
-              {%- assign window_end = today_ts | plus: 604800 -%}  <!-- 7 days -->
-              
-              {%- assign due_ts_raw = a.due | date: "%s" -%}
-              {%- assign due_ts = due_ts_raw | plus: 0 -%}  {# coerce to number; if parse fails -> 0 #}
-              
-              {%- assign has_valid_due = due_ts > 0 -%}
-              {%- assign is_past = has_valid_due and (due_ts < today_ts) -%}
-              {%- assign is_upcoming = has_valid_due and (due_ts >= today_ts) and (due_ts < window_end) -%}
-              
+            {%- assign today_ts = site.time | date: "%s" | plus: 0 -%}
+            {%- assign window_end = today_ts | plus: 604800 -%}  <!-- 7 days -->
+            {%- assign due_ts_raw = a.due | date: "%s" -%}
+            {%- assign due_ts = due_ts_raw | plus: 0 -%} {% comment %} coerce to number; if parse fails -> 0 {% endcomment %}
+            {%- assign has_valid_due = due_ts > 0 -%}
+            {%- assign is_past = has_valid_due and (due_ts < today_ts) -%}
+            {%- assign is_upcoming = has_valid_due and (due_ts >= today_ts) and (due_ts < window_end) -%}
+                          
               <span class="asg-badge
                 {% if is_past %}
                   asg-badge-past
