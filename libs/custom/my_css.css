@@ -312,3 +312,40 @@ h4 {
 .notice-box strong {
   color: #000;
 }
+
+
+/* Assignments – Option 3 (icon list with Cornell accent) */
+.asg-list { list-style: none; padding: 0; margin: 1rem 0 0; }
+.asg-item {
+  margin: 0 0 1rem 0;
+  padding: 0.9rem 1rem;
+  background: #f9f9f9;
+  border-left: 4px solid #8A100B; /* Cornell red */
+  border-radius: 6px;
+}
+.asg-title { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
+.asg-emoji { font-size: 1.15rem; line-height: 1; }
+.asg-link { font-weight: 700; font-size: 1.05rem; color: #00205B; text-decoration: none; }
+.asg-link:hover { text-decoration: underline; }
+
+.asg-badge {
+  margin-left: .5rem;
+  font-size: .80rem;
+  padding: .15rem .45rem;
+  border-radius: .5rem;
+  border: 1px solid #ddd;
+  color: #444;
+  background: #fff;
+}
+.asg-badge-due { border-color: #8A100B; color: #8A100B; background: #fff8f7; }
+.asg-badge-past { border-color: #9aa4af; color: #6b7280; background: #f4f6f8; }
+
+.asg-summary { margin: .35rem 0 .5rem 1.65rem; color: #333; font-size: .95rem; }
+.asg-actions { margin-left: 1.65rem; font-size: .9rem; }
+.asg-action { color: #004B87; text-decoration: none; }
+.asg-action:hover { text-decoration: underline; }
+
+/* small screens */
+@media (max-width: 480px) {
+  .asg-summary, .asg-actions { margin-left: 1.6rem; }
+}
