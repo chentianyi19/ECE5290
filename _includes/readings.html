@@ -13,7 +13,7 @@
       <div class="paper">
         <p class="title"><b>{{ paper.title }}</b></p>
         <p>{{ paper.authors }}; <i>{{ paper.venue }}</i></p>
-        {%- if paper.note %}<p>{{ paper.note }}</p>{% endif %}
+        {%- if paper.note %}<p class="paper-note">{{ paper.note }}</p>{% endif %}
 
         <div class="paper-buttons">
           {%- assign links = 
