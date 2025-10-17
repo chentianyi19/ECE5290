@@ -30,13 +30,13 @@
   year: 2021
   tags: ["core", "federated"]
 
-- title: "Gradient Tracking for Decentralized Optimization"
+- title: "Achieving geometric convergence for distributed optimization over time-varying graphs"
   authors: "A. Nedić, A. Olshevsky, W. Shi"
-  venue: "IEEE Transactions on Automatic Control, 2017"
-  note: "Pioneering paper introducing gradient tracking, enabling linear convergence in decentralized networks."
-  paper_pdf: "https://arxiv.org/abs/1705.07298"
+  venue: "SIAM Journal on Optimization, 2017"
+  note: "Pioneering paper introducing gradient tracking, enabling linear convergence in  time-varying graphs."
+  paper_pdf: "https://arxiv.org/pdf/1607.03218"
   year: 2017
-  tags: ["core", "advanced", "decentralized"]
+  tags: ["advanced", "decentralized"]
 
 - title: "Local SGD Converges Fast and Communicates Little"
   authors: "S. U. Stich"
