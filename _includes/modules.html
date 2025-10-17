@@ -3,8 +3,6 @@
 
   {%- assign mods = site.data.modules | sort: "date" -%}
   {%- assign all_weeks = mods | map: "week" | uniq -%}
-  {%- assign today_ymd = site.time | date: "%Y-%m-%d" -%}
-  {%- assign highlight_done = false -%}
 
   <div class="modules-accordion">
   {%- for w in all_weeks -%}
@@ -15,36 +13,21 @@
     {%- assign start_ymd = first.date | date: "%Y-%m-%d" -%}
     {%- assign end_ymd   = last.date  | date: "%Y-%m-%d" -%}
 
-    {%- assign is_current = false -%}
-    {%- if start_ymd <= today_ymd and today_ymd <= end_ymd -%}
-      {%- assign is_current = true -%}
-    {%- endif -%}
-
-    {%- assign week_class = '' -%}
-    {%- assign open_attr  = '' -%}
-
-    {%- if is_current and highlight_done == false -%}
-      {%- assign week_class = 'current-week' -%}
-      {%- assign open_attr  = 'open' -%}
-      {%- assign highlight_done = true -%}
-    {%- elsif highlight_done == false and start_ymd > today_ymd -%}
-      {%- comment -%} No current week → highlight the next upcoming one {%- endcomment -%}
-      {%- assign week_class = 'current-week' -%}
-      {%- assign open_attr  = 'open' -%}
-      {%- assign highlight_done = true -%}
-    {%- endif -%}
-
-    <details class="week {{ week_class }}" {{ open_attr }}>
+    <!-- Neutral render: no server-side highlight/open; add machine-readable dates -->
+    <details class="week"
+             data-week="{{ w }}"
+             data-start="{{ start_ymd }}"
+             data-end="{{ end_ymd }}">
       <summary>
         <span class="wk">Week {{ w }}</span>
         <span class="range">{{ first.date | date: "%b %d" }} – {{ last.date | date: "%b %d" }}</span>
         <span class="count">{{ week_items | size }} sessions</span>
-        {%- if week_class == 'current-week' -%}<span class="badge now">This week</span>{%- endif -%}
+        <span class="badge now" data-role="now-badge" style="display:none;">This week</span>
       </summary>
 
       <ul class="sessions">
         {%- for m in week_items -%}
-        <li class="session">
+        <li class="session" data-date="{{ m.date | date: '%Y-%m-%d' }}">
           <div class="date">{{ m.date | date: "%a, %b %d" }}</div>
           <div class="title">
             <strong>{{ m.title }}</strong>
@@ -62,4 +45,62 @@
     </details>
   {%- endfor -%}
   </div>
+
+  <script>
+  (function () {
+    // Local 'today' at midnight for visitor
+    const today = new Date(); today.setHours(0,0,0,0);
+
+    const weeks = Array.from(document.querySelectorAll('.modules-accordion details.week')).map(d => {
+      const startISO = d.getAttribute('data-start'); // YYYY-MM-DD
+      const endISO   = d.getAttribute('data-end');   // YYYY-MM-DD
+      if (!startISO || !endISO) return null;
+
+      // Treat week bounds as local end-of-day
+      const start = new Date(startISO + 'T00:00:00');
+      const end   = new Date(endISO   + 'T23:59:59');
+      return { el: d, start, end, startISO, endISO };
+    }).filter(Boolean);
+
+    if (!weeks.length) return;
+
+    // 1) Prefer the week containing 'today'
+    let chosen = weeks.find(w => w.start <= today && today <= w.end);
+
+    // 2) If none, choose the next upcoming (smallest start >= today)
+    if (!chosen) {
+      const upcoming = weeks
+        .filter(w => w.start >= today)
+        .sort((a,b) => a.start - b.start);
+      if (upcoming.length) chosen = upcoming[0];
+    }
+
+    // 3) If still none (all in the past), choose the last week
+    if (!chosen) {
+      chosen = weeks.slice().sort((a,b) => b.end - a.end)[0];
+    }
+
+    // Apply highlight to chosen only
+    weeks.forEach(w => {
+      w.el.classList.toggle('current-week', w === chosen);
+      if (w === chosen) {
+        // Open the chosen accordion
+        w.el.setAttribute('open', '');
+        // Show the "This week" badge
+        const badge = w.el.querySelector('[data-role="now-badge"]');
+        if (badge) badge.style.display = 'inline-block';
+      } else {
+        w.el.removeAttribute('open');
+        const badge = w.el.querySelector('[data-role="now-badge"]');
+        if (badge) badge.style.display = 'none';
+      }
+    });
+
+    // (Optional) Mark today's sessions inside the chosen week
+    // Your CSS already supports .sessions .session.today and .badge.today (if you want to show it).
+    const todayISO = today.toISOString().slice(0,10); // YYYY-MM-DD
+    const todaySessions = chosen.el.querySelectorAll('.session[data-date="' + todayISO + '"]');
+    todaySessions.forEach(li => li.classList.add('today'));
+  })();
+  </script>
 </section>
