@@ -465,7 +465,13 @@ details.week.current-week .sessions .session {
   background: #fdecea; /* light Cornell red/pink */
   font-weight: 600;
 }
-
+/* Soft highlight for entire upcoming assignment row (optional) */
+.asg-item-upcoming {
+  background: #f3f8ff;
+  border-left: 4px solid #004B87;
+  border-radius: 6px;
+  padding-left: .6rem;
+}
 .asg-summary {
   margin: 0.3rem 0 0.5rem 1.7rem;
   color: #333;
