@@ -1,39 +1,51 @@
 <section id="modules" class="docs-section">
   <h4>Modules</h4>
-{%- assign mods = site.data.modules | sort: "date" -%}
-{%- assign all_weeks = mods | map: "week" | uniq -%}
-{%- assign today_ts = site.time | date: "%s" | plus: 0 -%}
 
-<div class="modules-accordion">
-{%- for w in all_weeks -%}
-  {%- assign week_items = mods | where: "week", w | sort: "date" -%}
-  {%- assign first = week_items | first -%}
-  {%- assign last  = week_items | last  -%}
+  {%- assign mods = site.data.modules | sort: "date" -%}
+  {%- assign all_weeks = mods | map: "week" | uniq -%}
+  {%- assign today_ts = site.time | date: "%s" | plus: 0 -%}
+  {%- assign highlight_done = false -%}
 
-  {%- assign start_ts = first.date | date: "%s" | plus: 0 -%}
-  {%- assign end_ts   = last.date  | date: "%s" | plus: 86399 -%} {%- comment -%} include entire last day {%- endcomment -%}
+  <div class="modules-accordion">
+  {%- for w in all_weeks -%}
+    {%- assign week_items = mods | where: "week", w | sort: "date" -%}
+    {%- assign first = week_items | first -%}
+    {%- assign last  = week_items | last  -%}
 
-  {%- assign is_this_week = false -%}
-  {%- if start_ts <= today_ts and today_ts <= end_ts -%}
-    {%- assign is_this_week = true -%}
-  {%- endif -%}
+    {%- assign start_ts = first.date | date: "%s" | plus: 0 -%}
+    {%- assign end_ts   = last.date  | date: "%s" | plus: 86399 -%} {%- comment -%} include entire last day {%- endcomment -%}
 
-  <details class="week {% if is_this_week %}current-week{% endif %}" {% if is_this_week %}open{% endif %}>
-    <summary>
-      <span class="wk">Week {{ w }}</span>
-      <span class="range">{{ first.date | date: "%b %d" }} – {{ last.date | date: "%b %d" }}</span>
-      <span class="count">{{ week_items | size }} sessions</span>
-      {% if is_this_week %}<span class="badge now">This week</span>{% endif %}
-    </summary>
+    {%- assign is_current = false -%}
+    {%- if start_ts <= today_ts and today_ts <= end_ts -%}
+      {%- assign is_current = true -%}
+    {%- endif -%}
 
-    <ul class="sessions">
-      {%- for m in week_items -%}
-        {%- assign is_today = (m.date | date: "%Y-%m-%d") == (site.time | date: "%Y-%m-%d") -%}
-        <li class="session {% if is_today %}today{% endif %}">
-          <div class="date">
-            {{ m.date | date: "%a, %b %d" }}
-            {% if is_today %}<span class="badge today">Today</span>{% endif %}
-          </div>
+    {%- assign week_class = '' -%}
+    {%- assign open_attr  = '' -%}
+
+    {%- if is_current and highlight_done == false -%}
+      {%- assign week_class = 'current-week' -%}
+      {%- assign open_attr  = 'open' -%}
+      {%- assign highlight_done = true -%}
+    {%- elsif highlight_done == false and start_ts > today_ts -%}
+      {%- comment -%} no current week yet; highlight the next upcoming week {%- endcomment -%}
+      {%- assign week_class = 'current-week' -%}
+      {%- assign open_attr  = 'open' -%}
+      {%- assign highlight_done = true -%}
+    {%- endif -%}
+
+    <details class="week {{ week_class }}" {{ open_attr }}>
+      <summary>
+        <span class="wk">Week {{ w }}</span>
+        <span class="range">{{ first.date | date: "%b %d" }} – {{ last.date | date: "%b %d" }}</span>
+        <span class="count">{{ week_items | size }} sessions</span>
+        {%- if week_class == 'current-week' -%}<span class="badge now">This week</span>{%- endif -%}
+      </summary>
+
+      <ul class="sessions">
+        {%- for m in week_items -%}
+        <li class="session">
+          <div class="date">{{ m.date | date: "%a, %b %d" }}</div>
           <div class="title">
             <strong>{{ m.title }}</strong>
             {%- if m.summary %}<div class="sum">{{ m.summary }}</div>{% endif -%}
@@ -45,9 +57,9 @@
             </div>
           </div>
         </li>
-      {%- endfor -%}
-    </ul>
-  </details>
-{%- endfor -%}
-</div>
+        {%- endfor -%}
+      </ul>
+    </details>
+  {%- endfor -%}
+  </div>
 </section>
