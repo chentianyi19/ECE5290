@@ -133,7 +133,7 @@
   summary: >
     Analysis of decentralized gradient descent, spectral gap influence on convergence,
     and geometric interpretation of consensus dynamics.
-  slides_url: "/assets/slides/Lec15.pdf"
+  slides_url: "/assets/slides/Lec14.pdf"
   note: HW 3 due (10/20)
   
 - week: 9
