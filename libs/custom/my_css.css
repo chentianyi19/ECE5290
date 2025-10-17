@@ -341,7 +341,7 @@ h4 {
 
 .asg-link {
   font-weight: 600;
-  font-size: 1.25rem; /* increased for better alignment with readings */
+  font-size: 1.45rem; /* increased for better alignment with readings */
   color: #00205B; /* Cornell Tech blue */
   text-decoration: none;
 }
@@ -352,7 +352,7 @@ h4 {
 
 .asg-badge {
   margin-left: 0.5rem;
-  font-size: 0.85rem;
+  font-size: 1.25rem;
   padding: 0.1rem 0.4rem;
   border-radius: 0.4rem;
   border: 1px solid #ccc;
@@ -369,7 +369,7 @@ h4 {
 
 .asg-actions {
   margin-left: 1.7rem;
-  font-size: 0.95rem;
+  font-size: 1.25rem;
 }
 
 .asg-action {
@@ -387,4 +387,15 @@ h4 {
   .asg-actions {
     margin-left: 1.5rem;
   }
+}
+
+/* Suggested Readings note style */
+.paper-note {
+  font-size: 0.85rem;        /* smaller than main text */
+  color: #555;               /* muted gray tone */
+  margin-top: -0.3rem;       /* tighten spacing above */
+  margin-bottom: 0.8rem;     /* gentle spacing below */
+  font-style: italic;        /* optional, for academic tone */
+  max-width: 700px;
+  line-height: 1.4;
 }
