@@ -1,18 +1,18 @@
 # One entry per assignment or project milestone
 - id: "hw1"
-  title: "HW1: Mathematical and Machhine Learning Foundations"
-  due: 2025-09-19
+  title: "HW1: Mathematical and Machine Learning Foundations"
+  due: 2025-09-12
   pdf: "/assets/hw/hw1.pdf"
   starter:  null
 
 - id: "hw2"
   title: "HW2: Gradient Descent Convergence and Trade-offs of SGD"
-  due: 2025-09-26
+  due: 2025-09-28
   pdf: "/assets/hw/hw2.pdf"
   starter: "/assets/hw/hw2_starter.py"
   
 - id: "hw3"
-  title: "HW3: Consensus averaging and Spectral properties of Graphs"
+  title: "HW3: Consensus Averaging and Spectral Properties of Graphs"
   due: 2025-10-20
   pdf: "/assets/hw/hw3.pdf"
   starter: null
