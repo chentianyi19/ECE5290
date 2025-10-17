@@ -2,35 +2,49 @@
 - id: "hw1"
   title: "HW1: Gradient Descent & Convergence"
   due: 2025-09-19
-  pdf: "https://raw.githubusercontent.com/chentianyi19/ECE5290/main/assets/hw/hw1.pdf"
+  pdf: "/assets/hw/hw1.pdf"
   starter: ""
 
 - id: "hw2"
   title: "HW2"
   due: 2025-09-26
-  pdf: "https://raw.githubusercontent.com/chentianyi19/ECE5290/main/assets/hw/hw2.pdf"
-  starter: "https://raw.githubusercontent.com/chentianyi19/ECE5290/main/assets/hw/hw2_starter.py"
+  pdf: "/assets/hw/hw2.pdf"
+  starter: "/assets/hw/hw2_starter.py"
   
 - id: "hw3"
   title: "HW3"
   due: 2025-10-20
-  pdf: "https://raw.githubusercontent.com/chentianyi19/ECE5290/main/assets/hw/hw3.pdf"
+  pdf: "/assets/hw/hw3.pdf"
   starter: ""
   
+- id: "proj"
+  title: "Project Guidelines"
+  due: null
+  pdf: "/assets/files/ECE_5290_Project.pdf"
+  starter: null
+
+- id: "sample"
+  title: "Practice Problems"
+  due: null
+  pdf: "/assets/hw/ECE_5290_QA.pdf"
+  starter: null  
+
+- id: "sample"
+  title: "Solutions of Practice Problems"
+  due: null
+  pdf: "/assets/hw/ECE_5290_QA_sol.pdf"
+  starter: null    
+
 - id: "hw4"
   title: "HW4"
-  due: 2025-11-14
-  pdf: "https://raw.githubusercontent.com/chentianyi19/ECE5290/main/assets/hw/hw4.pdf"
+  due: TBD
+  pdf: "/assets/hw/hw4.pdf"
   starter: ""
   
 - id: "hw5"
   title: "HW5"
-  due: 2025-12-01
+  due: TBD
   pdf: ""
   starter: ""
 
-- id: "proj"
-  title: "Project Guidelines"
-  due: null
-  pdf: "/assets/project/guidelines.pdf"
-  starter: null
+ 
