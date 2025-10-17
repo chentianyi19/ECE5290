@@ -364,22 +364,7 @@ details.week.current-week > summary:hover {
   background: #fff;
   color: #444;
 }
-
-/* “Today” badge */
-.badge.today {
-  background: #ffe9a8;              /* soft yellow */
-  border-color: #d4a600;
-  color: #6b5600;
-  font-weight: 600;
-}
-
-/* Highlight today’s session */
-.sessions .session.today {
-  background: #fffdf2;
-  border-left: 4px solid #d4a600;
-  border-radius: 4px;
-  padding-left: 0.6rem;
-}
+ 
 
 /* Optional: add spacing between sessions for readability */
 .sessions .session {
