@@ -10,9 +10,8 @@
   {%- assign first = week_items | first -%}
   {%- assign last  = week_items | last  -%}
 
-  {%- comment %} coerce to numeric UNIX seconds {% endcomment -%}
   {%- assign start_ts = first.date | date: "%s" | plus: 0 -%}
-  {%- assign end_ts   = last.date  | date: "%s" | plus: 86399 -%}  {# include last day #}
+  {%- assign end_ts   = last.date  | date: "%s" | plus: 86399 -%} {%- comment -%} include entire last day {%- endcomment -%}
 
   {%- assign is_this_week = false -%}
   {%- if start_ts <= today_ts and today_ts <= end_ts -%}
