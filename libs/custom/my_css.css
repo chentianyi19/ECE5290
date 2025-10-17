@@ -391,7 +391,7 @@ h4 {
 
 /* Suggested Readings note style */
 .paper-note {
-  font-size: 0.85rem;        /* smaller than main text */
+  font-size: 0.95rem;        /* smaller than main text */
   color: #555;               /* muted gray tone */
   margin-top: -0.3rem;       /* tighten spacing above */
   margin-bottom: 0.8rem;     /* gentle spacing below */
