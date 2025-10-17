@@ -460,11 +460,10 @@ details.week.current-week .sessions .session {
 
 /* 🎯 New: highlight upcoming due within 14 days */
 .asg-badge-upcoming {
-  color: #000;
-  border-color: #004B87;
-  background: #d9ecff; /* brighter blue so it pops */
+  color: #8A100B;
+  border-color: #8A100B;
+  background: #fdecea; /* light Cornell red/pink */
   font-weight: 600;
-  box-shadow: 0 0 5px rgba(0, 75, 135, 0.25); /* optional subtle glow */
 }
 
 .asg-summary {
