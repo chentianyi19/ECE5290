@@ -1,20 +1,41 @@
 <section id="assignments" class="docs-section">
   <h4>Assignments & Project</h4>
-  <ul>
+
+  <ul class="asg-list">
     {%- assign asg = site.data.assignments -%}
     {%- for a in asg -%}
-      <li>
-        {%- if a.pdf -%}
-          <a href="{{ a.pdf  | relative_url}}">{{ a.title }}</a>
-        {%- else -%}
-          {{ a.title }}
+      <li class="asg-item">
+        <div class="asg-title">
+          <span class="asg-emoji">📘</span>
+          {%- if a.pdf -%}
+            <a href="{{ a.pdf | relative_url }}" class="asg-link">{{ a.title }}</a>
+          {%- else -%}
+            <span class="asg-link">{{ a.title }}</span>
+          {%- endif -%}
+          {%- if a.due -%}
+            {%- assign today = 'now' | date: "%s" -%}
+            {%- assign due_ts = a.due | date: "%s" -%}
+            <span class="asg-badge {% if due_ts < today %}asg-badge-past{% else %}asg-badge-due{% endif %}">
+              {{ a.due | date: "%b %d, %Y" }}
+            </span>
+          {%- endif -%}
+        </div>
+
+        {%- if a.summary -%}
+          <p class="asg-summary">{{ a.summary }}</p>
         {%- endif -%}
-        {%- if a.due -%}
-          &nbsp;(<em>due {{ a.due | date: "%b %d, %Y" }}</em>)
-        {%- endif -%}
-        {%- if a.starter -%}
-          &nbsp;— <a href="{{ a.starter  | relative_url}}">starter code</a>
-        {%- endif -%}
+
+        <div class="asg-actions">
+          {%- if a.starter -%}
+            <a href="{{ a.starter | relative_url }}" class="asg-action">Starter code ↗</a>
+          {%- endif -%}
+          {%- if a.solutions -%}
+            &nbsp;•&nbsp;<a href="{{ a.solutions | relative_url }}" class="asg-action">Solutions</a>
+          {%- endif -%}
+          {%- if a.extra -%}
+            &nbsp;•&nbsp;<a href="{{ a.extra | relative_url }}" class="asg-action">Extra materials</a>
+          {%- endif -%}
+        </div>
       </li>
     {%- endfor -%}
   </ul>
