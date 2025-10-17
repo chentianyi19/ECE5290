@@ -360,8 +360,25 @@ h4 {
   background: #fff;
 }
 
-.asg-badge-due { color: #004B87; border-color: #004B87; }
-.asg-badge-past { color: #888; border-color: #ccc; }
+.asg-badge-past {
+  color: #888;
+  border-color: #ccc;
+  background: #f4f4f4;
+}
+
+.asg-badge-due {
+  color: #004B87;
+  border-color: #004B87;
+  background: #fff;
+}
+
+/* 🎯 New: highlight upcoming due within 14 days */
+.asg-badge-upcoming {
+  color: #000;
+  border-color: #004B87;
+  background: #e6f3ff; /* soft Cornell Tech blue highlight */
+  font-weight: 600;
+}
 
 .asg-summary {
   margin: 0.3rem 0 0.5rem 1.7rem;
