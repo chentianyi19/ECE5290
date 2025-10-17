@@ -1,53 +1,53 @@
 <section id="modules" class="docs-section">
   <h4>Modules</h4>
-{%- assign mods = site.data.modules | sort: "date" -%}
-{%- assign all_weeks = mods | map: "week" | uniq -%}
-{%- assign today_ts = site.time | date: "%s" -%}
-
-<div class="modules-accordion">
-{%- for w in all_weeks -%}
-  {%- assign week_items = mods | where: "week", w | sort: "date" -%}
-  {%- assign first = week_items | first -%}
-  {%- assign last  = week_items | last  -%}
-
-  {%- assign start_ts = first.date | date: "%s" -%}
-  {%- assign end_ts   = last.date  | date: "%s" | plus: 86399 -%}  {# include entire last day #}
-
-  {%- assign is_this_week = false -%}
-  {%- if start_ts <= today_ts and today_ts <= end_ts -%}
-    {%- assign is_this_week = true -%}
-  {%- endif -%}
-
-  <details class="week {% if is_this_week %}current-week{% endif %}" {% if is_this_week %}open{% endif %}>
-    <summary>
-      <span class="wk">Week {{ w }}</span>
-      <span class="range">{{ first.date | date: "%b %d" }} – {{ last.date | date: "%b %d" }}</span>
-      <span class="count">{{ week_items | size }} sessions</span>
-      {% if is_this_week %}<span class="badge now">This week</span>{% endif %}
-    </summary>
-
-    <ul class="sessions">
-      {%- for m in week_items -%}
-        {%- assign is_today = (m.date | date: "%Y-%m-%d") == (site.time | date: "%Y-%m-%d") -%}
-        <li class="session {% if is_today %}today{% endif %}">
-          <div class="date">
-            {{ m.date | date: "%a, %b %d" }}
-            {% if is_today %}<span class="badge today">Today</span>{% endif %}
-          </div>
-          <div class="title">
-            <strong>{{ m.title }}</strong>
-            {%- if m.summary %}<div class="sum">{{ m.summary }}</div>{% endif -%}
-            <div class="meta">
-              {%- if m.slides_url %}<a class="badge" href="{{ m.slides_url | relative_url }}">Slides</a>{% endif -%}
-              {%- if m.note %}<span class="badge alt">{{ m.note }}</span>{% endif -%}
-              {%- if m.title contains "No class" %}<span class="badge neutral">No Class</span>{% endif -%}
-              {%- if m.title contains "Exam" %}<span class="badge neutral">Exam</span>{% endif -%}
+  {%- assign mods = site.data.modules | sort: "date" -%}
+  {%- assign all_weeks = mods | map: "week" | uniq -%}
+  {%- assign today_ts = site.time | date: "%s" -%}
+  
+  <div class="modules-accordion">
+  {%- for w in all_weeks -%}
+    {%- assign week_items = mods | where: "week", w | sort: "date" -%}
+    {%- assign first = week_items | first -%}
+    {%- assign last  = week_items | last  -%}
+  
+    {%- assign start_ts = first.date | date: "%s" -%}
+    {%- assign end_ts   = last.date  | date: "%s" | plus: 86399 -%}  {# include entire last day #}
+  
+    {%- assign is_this_week = false -%}
+    {%- if start_ts <= today_ts and today_ts <= end_ts -%}
+      {%- assign is_this_week = true -%}
+    {%- endif -%}
+  
+    <details class="week {% if is_this_week %}current-week{% endif %}" {% if is_this_week %}open{% endif %}>
+      <summary>
+        <span class="wk">Week {{ w }}</span>
+        <span class="range">{{ first.date | date: "%b %d" }} – {{ last.date | date: "%b %d" }}</span>
+        <span class="count">{{ week_items | size }} sessions</span>
+        {% if is_this_week %}<span class="badge now">This week</span>{% endif %}
+      </summary>
+  
+      <ul class="sessions">
+        {%- for m in week_items -%}
+          {%- assign is_today = (m.date | date: "%Y-%m-%d") == (site.time | date: "%Y-%m-%d") -%}
+          <li class="session {% if is_today %}today{% endif %}">
+            <div class="date">
+              {{ m.date | date: "%a, %b %d" }}
+              {% if is_today %}<span class="badge today">Today</span>{% endif %}
             </div>
-          </div>
-        </li>
-      {%- endfor -%}
-    </ul>
-  </details>
-{%- endfor -%}
-</div>
+            <div class="title">
+              <strong>{{ m.title }}</strong>
+              {%- if m.summary %}<div class="sum">{{ m.summary }}</div>{% endif -%}
+              <div class="meta">
+                {%- if m.slides_url %}<a class="badge" href="{{ m.slides_url | relative_url }}">Slides</a>{% endif -%}
+                {%- if m.note %}<span class="badge alt">{{ m.note }}</span>{% endif -%}
+                {%- if m.title contains "No class" %}<span class="badge neutral">No Class</span>{% endif -%}
+                {%- if m.title contains "Exam" %}<span class="badge neutral">Exam</span>{% endif -%}
+              </div>
+            </div>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </details>
+  {%- endfor -%}
+  </div>
 </section>
