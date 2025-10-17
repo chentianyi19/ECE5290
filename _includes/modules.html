@@ -3,7 +3,7 @@
 
   {%- assign mods = site.data.modules | sort: "date" -%}
   {%- assign all_weeks = mods | map: "week" | uniq -%}
-  {%- assign today_ts = site.time | date: "%s" | plus: 0 -%}
+  {%- assign today_ymd = site.time | date: "%Y-%m-%d" -%}
   {%- assign highlight_done = false -%}
 
   <div class="modules-accordion">
@@ -12,11 +12,11 @@
     {%- assign first = week_items | first -%}
     {%- assign last  = week_items | last  -%}
 
-    {%- assign start_ts = first.date | date: "%s" | plus: 0 -%}
-    {%- assign end_ts   = last.date  | date: "%s" | plus: 86399 -%} {%- comment -%} include entire last day {%- endcomment -%}
+    {%- assign start_ymd = first.date | date: "%Y-%m-%d" -%}
+    {%- assign end_ymd   = last.date  | date: "%Y-%m-%d" -%}
 
     {%- assign is_current = false -%}
-    {%- if start_ts <= today_ts and today_ts <= end_ts -%}
+    {%- if start_ymd <= today_ymd and today_ymd <= end_ymd -%}
       {%- assign is_current = true -%}
     {%- endif -%}
 
@@ -27,8 +27,8 @@
       {%- assign week_class = 'current-week' -%}
       {%- assign open_attr  = 'open' -%}
       {%- assign highlight_done = true -%}
-    {%- elsif highlight_done == false and start_ts > today_ts -%}
-      {%- comment -%} no current week yet; highlight the next upcoming week {%- endcomment -%}
+    {%- elsif highlight_done == false and start_ymd > today_ymd -%}
+      {%- comment -%} No current week → highlight the next upcoming one {%- endcomment -%}
       {%- assign week_class = 'current-week' -%}
       {%- assign open_attr  = 'open' -%}
       {%- assign highlight_done = true -%}
