@@ -1,18 +1,18 @@
 # One entry per assignment or project milestone
 - id: "hw1"
-  title: "HW1: Gradient Descent & Convergence"
+  title: "HW1: Mathematical and Machhine Learning Foundations"
   due: 2025-09-19
   pdf: "/assets/hw/hw1.pdf"
   starter: ""
 
 - id: "hw2"
-  title: "HW2"
+  title: "HW2: Gradient Descent Convergence and Trade-offs of SGD"
   due: 2025-09-26
   pdf: "/assets/hw/hw2.pdf"
   starter: "/assets/hw/hw2_starter.py"
   
 - id: "hw3"
-  title: "HW3"
+  title: "HW3: Consensus averaging and Spectral properties of Graphs"
   due: 2025-10-20
   pdf: "/assets/hw/hw3.pdf"
   starter: ""
@@ -36,7 +36,7 @@
   starter: null    
 
 - id: "hw4"
-  title: "HW4"
+  title: "HW4: Implement of Various Forms of All-reduce"
   due: TBD
   pdf: "/assets/hw/hw4.pdf"
   starter: ""
