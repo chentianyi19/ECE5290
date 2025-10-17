@@ -13,21 +13,22 @@
             <span class="asg-link">{{ a.title }}</span>
           {%- endif -%}
           {%- if a.due -%}
-              {%- assign today = 'now' | date: "%s" -%}
-              {%- assign due_ts = a.due | date: "%s" -%}
+              {%- assign today_ts = site.time | date: "%s" | plus: 0 -%}
+              {%- assign due_ts   = a.due     | date: "%s" | plus: 0 -%}
               
-              {%- assign diff_days = (due_ts | minus: today) | divided_by: 86400 -%}
-              {%- assign is_upcoming = diff_days < 14 and diff_days > 0 -%}
+              {%- assign diff_secs = due_ts | minus: today_ts -%}
+              {%- assign diff_days = diff_secs | divided_by: 86400 -%}
+              {%- assign is_upcoming = diff_days >= 0 and diff_days < 7 -%}
               
               <span class="asg-badge
-                {% if due_ts < today %}
+                {% if due_ts < today_ts %}
                   asg-badge-past
                 {% elsif is_upcoming %}
                   asg-badge-upcoming
                 {% else %}
                   asg-badge-due
                 {% endif %}">
-                {% if due_ts < today %}Past:{% else %}Due:{% endif %}
+                {% if due_ts < today_ts %}Past:{% else %}Due:{% endif %}
                 {{ a.due | date: "%b %d, %Y" }}
               </span>
           {%- endif -%}
