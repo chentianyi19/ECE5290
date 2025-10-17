@@ -1,40 +1,36 @@
 <section id="assignments" class="docs-section">
   <h4>Assignments & Project</h4>
 
-  {%- assign asg = site.data.assignments -%}
-  {%- assign today_ymd = site.time | date: "%Y-%m-%d" -%}
-  {%- assign window_end_ts = site.time | date: "%s" | plus: 604800 -%}
-  {%- assign window_end_ymd = window_end_ts | date: "%Y-%m-%d" -%}
-
   <ul class="asg-list">
+    {%- assign asg = site.data.assignments -%}
     {%- for a in asg -%}
       <li class="asg-item">
         <div class="asg-title">
           <span class="asg-emoji">📘</span>
-
           {%- if a.pdf -%}
             <a href="{{ a.pdf | relative_url }}" class="asg-link">{{ a.title }}</a>
           {%- else -%}
             <span class="asg-link">{{ a.title }}</span>
           {%- endif -%}
-
           {%- if a.due -%}
-            {%- assign due_ymd = a.due | date: "%Y-%m-%d" -%}
-
-            {%- assign is_past = due_ymd < today_ymd -%}
-            {%- assign is_upcoming = (due_ymd >= today_ymd) and (due_ymd < window_end_ymd) -%}
-
-            <span class="asg-badge
-              {% if is_past %}
-                asg-badge-past
-              {% elsif is_upcoming %}
-                asg-badge-upcoming
-              {% else %}
-                asg-badge-due
-              {% endif %}">
-              {% if is_past %}Past:{% else %}Due:{% endif %}
-              {{ a.due | date: "%b %d, %Y" }}
-            </span>
+              {%- assign today_ts = site.time | date: "%s" | plus: 0 -%}
+              {%- assign due_ts   = a.due     | date: "%s" | plus: 0 -%}
+              
+              {%- assign diff_secs = due_ts | minus: today_ts -%}
+              {%- assign diff_days = diff_secs | divided_by: 86400 -%}
+              {%- assign is_upcoming = diff_days >= 0 and diff_days < 10 -%}
+              
+              <span class="asg-badge
+                {% if due_ts < today_ts %}
+                  asg-badge-past
+                {% elsif is_upcoming %}
+                  asg-badge-upcoming
+                {% else %}
+                  asg-badge-due
+                {% endif %}">
+                {% if due_ts < today_ts %}Past:{% else %}Due:{% endif %}
+                {{ a.due | date: "%b %d, %Y" }}
+              </span>
           {%- endif -%}
         </div>
 
