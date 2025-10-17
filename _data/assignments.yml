@@ -19,31 +19,31 @@
   
 - id: "proj"
   title: "Project Guidelines"
-  due: null
+  due: 2025-12-13
   pdf: "/assets/files/ECE_5290_Project.pdf"
   starter: null
 
 - id: "sample"
   title: "Practice Problems"
-  due: null
+  due: 2025-10-29
   pdf: "/assets/hw/ECE_5290_QA.pdf"
   starter: null  
 
 - id: "sample"
   title: "Solutions of Practice Problems"
-  due: null
+  due: 2025-10-29
   pdf: "/assets/hw/ECE_5290_QA_sol.pdf"
   starter: null    
 
 - id: "hw4"
   title: "HW4: Implementation of Various Forms of All-reduce"
-  due: TBD
+  due: 2025-11-15
   pdf: "/assets/hw/hw4.pdf"
   starter: ""
   
 - id: "hw5"
   title: "HW5: Implementation of Zero Redundancy Optimizer"
-  due: TBD
+  due: 2025-12-1
   pdf: ""
   starter: ""
 
