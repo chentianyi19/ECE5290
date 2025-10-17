@@ -3,7 +3,7 @@
   title: "HW1: Mathematical and Machhine Learning Foundations"
   due: 2025-09-19
   pdf: "/assets/hw/hw1.pdf"
-  starter: ""
+  starter:  null
 
 - id: "hw2"
   title: "HW2: Gradient Descent Convergence and Trade-offs of SGD"
@@ -15,7 +15,7 @@
   title: "HW3: Consensus averaging and Spectral properties of Graphs"
   due: 2025-10-20
   pdf: "/assets/hw/hw3.pdf"
-  starter: ""
+  starter: null
   
 - id: "proj"
   title: "Project Guidelines"
@@ -36,13 +36,13 @@
   starter: null    
 
 - id: "hw4"
-  title: "HW4: Implement of Various Forms of All-reduce"
+  title: "HW4: Implementation of Various Forms of All-reduce"
   due: TBD
   pdf: "/assets/hw/hw4.pdf"
   starter: ""
   
 - id: "hw5"
-  title: "HW5"
+  title: "HW5: Implementation of Zero Redundancy Optimizer"
   due: TBD
   pdf: ""
   starter: ""
